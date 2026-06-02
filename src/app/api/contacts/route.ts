@@ -1,11 +1,11 @@
 const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL ??
+  process.env.BACKEND_URL ??
   (process.env.NODE_ENV === "production" ? undefined : "http://localhost:5001");
 
 export async function POST(req: Request) {
   if (!BACKEND_URL) {
     console.error(
-      "NEXT_PUBLIC_BACKEND_URL is not defined in frontend environment for /api/contacts",
+      "BACKEND_URL is not defined in frontend environment for /api/contacts",
     );
     return new Response(
       JSON.stringify({ error: "NEXT_PUBLIC_BACKEND_URL is not defined" }),
