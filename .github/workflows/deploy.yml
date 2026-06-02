@@ -1,0 +1,31 @@
+name: Deploy frontend to Vercel
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build frontend
+        run: npm run build
+      - name: Install Vercel CLI
+        run: npm install -g vercel || true
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if command -v vercel >/dev/null 2>&1; then
+            vercel --prod --token "$VERCEL_TOKEN" --confirm || true
+          else
+            echo 'Vercel CLI not available; please install locally or adjust this workflow.'
+            exit 1
+          fi
