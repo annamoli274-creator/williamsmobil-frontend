@@ -12,26 +12,36 @@ interface ContactClientProps {
 const ContactClient = ({ dict }: ContactClientProps) => {
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
 
-  const PROFESSIONAL_EMAIL = "contact@williamsmobilhome.com";
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     setStatus("sending");
 
-    const formData = new FormData(form);
-    const name = (formData.get("name") ?? "").toString();
-    const email = (formData.get("email") ?? "").toString();
-    const subject = (formData.get("subject") ?? "Demande depuis le site").toString();
-    const message = (formData.get("message") ?? "").toString();
+    try {
+      const formData = new FormData(form);
+      const name = (formData.get("name") ?? "").toString();
+      const email = (formData.get("email") ?? "").toString();
+      const subject = (formData.get("subject") ?? "Demande depuis le site").toString();
+      const message = (formData.get("message") ?? "").toString();
 
-    const body = `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoUrl = `mailto:${PROFESSIONAL_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL || "http://localhost:5001";
+      const res = await fetch(`${backendUrl}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
 
-    window.location.href = mailtoUrl;
-    setStatus("idle");
+      if (!res.ok) {
+        throw new Error(`Erreur: ${res.statusText}`);
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error("Erreur lors de l'envoi:", err);
+      setStatus("idle");
+      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+    }
   };
 
   return (
@@ -153,8 +163,7 @@ const ContactClient = ({ dict }: ContactClientProps) => {
             ) : (
               <>
                 <p className="text-sm text-slate-500 mb-4">
-                  En cliquant sur « Envoyer », votre client de messagerie s'ouvrira
-                  pour envoyer le message à contact@williamsmobilhome.com.
+                  Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -245,15 +254,8 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                     </>
                   )}
                 </button>
-                <p className="text-center text-sm text-slate-500 mt-3">
-                  {dict.contact.mailto_hint} <a
-                    href={`mailto:${PROFESSIONAL_EMAIL}`}
-                    className="text-primary font-bold hover:underline ml-1"
-                  >
-                    {PROFESSIONAL_EMAIL}
-                  </a>
-                </p>
-              </form>
+                </form>
+                </>
             )}
           </div>
         </div>
