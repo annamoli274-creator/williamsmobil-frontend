@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 
 const BACKEND_URL =
-  process.env.BACKEND_URL ??
+  process.env.NEXT_PUBLIC_BACKEND_URL ??
   (process.env.NODE_ENV === "production" ? undefined : "http://localhost:5001");
 
 function createForwardHeaders(request: Request) {
@@ -29,7 +29,7 @@ function createForwardHeaders(request: Request) {
 async function forwardRequest(request: Request) {
   if (!BACKEND_URL) {
     throw new Error(
-      "BACKEND_URL is not defined in frontend environment for /api/orders",
+      "NEXT_PUBLIC_BACKEND_URL is not defined in frontend environment for /api/orders",
     );
   }
 
@@ -94,3 +94,4 @@ export async function GET(request: Request) {
     );
   }
 }
+

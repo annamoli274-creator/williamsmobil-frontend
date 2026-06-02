@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { products as staticProducts } from "@/lib/products";
 
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:5001";
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
 
 export async function GET() {
   try {
@@ -37,3 +37,4 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
+
