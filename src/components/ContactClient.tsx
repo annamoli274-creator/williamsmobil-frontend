@@ -246,8 +246,7 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                   )}
                 </button>
                 <p className="text-center text-sm text-slate-500 mt-3">
-                  Si votre client mail ne s'ouvre pas, contactez-nous à 
-                  <a
+                  {dict.contact.mailto_hint} <a
                     href={`mailto:${PROFESSIONAL_EMAIL}`}
                     className="text-primary font-bold hover:underline ml-1"
                   >

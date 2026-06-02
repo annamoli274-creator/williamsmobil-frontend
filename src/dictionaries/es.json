@@ -149,6 +149,7 @@
     "message_placeholder": "Describe tu proyecto...",
     "submit_button": "Enviar mensaje"
   },
+  "mailto_hint": "Si tu cliente de correo no se abre, contáctanos en"
   "checkout": {
     "cart": "Carrito",
     "delivery": "Entrega",
