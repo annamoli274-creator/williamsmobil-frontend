@@ -12,9 +12,7 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: ["192.168.1.66"],
-  turbopack: {
-    root: path.resolve(process.cwd(), ".."),
-  },
+  turbopack: {},
   webpack: (config) => {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
