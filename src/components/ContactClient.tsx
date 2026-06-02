@@ -12,6 +12,8 @@ interface ContactClientProps {
 const ContactClient = ({ dict }: ContactClientProps) => {
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
 
+  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -26,8 +28,12 @@ const ContactClient = ({ dict }: ContactClientProps) => {
       message: formData.get("message"),
     };
 
+    const url = BACKEND_URL
+      ? `${BACKEND_URL}/api/contact`
+      : "/api/contacts";
+
     try {
-      const res = await fetch("/api/contacts", {
+      const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,13 +41,17 @@ const ContactClient = ({ dict }: ContactClientProps) => {
         body: JSON.stringify(data),
       });
 
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const errorText = await res.text();
+        console.error("Contact request failed:", res.status, errorText);
+        throw new Error(errorText || "Erreur lors de l'envoi");
+      }
 
       setStatus("success");
       form.reset();
     } catch (err) {
       console.error(err);
-      alert("Erreur lors de l'envoi");
+      alert("Erreur lors de l'envoi. Vérifie que le backend est accessible et que les variables d'environnement sont configurées.");
       setStatus("idle");
     }
   };
