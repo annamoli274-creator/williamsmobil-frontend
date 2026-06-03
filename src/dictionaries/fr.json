@@ -217,6 +217,82 @@
     "privacy_description": "Nous collectons uniquement les données nécessaires pour traiter vos demandes et sécuriser vos commandes. Vos informations personnelles restent confidentielles.",
     "terms_description": "En utilisant notre site, vous acceptez nos conditions générales de vente, nos méthodes de paiement et nos engagements de service client."
   },
+  "page_content": {
+    "concept": {
+      "intro": "Notre approche combine design, mobilité et durabilité pour proposer des habitats modulaires premium capables de s'installer partout.",
+      "paragraph1": "Williams Mobil développe des solutions de logement qui respectent les normes environnementales tout en offrant un confort moderne. Chaque modèle est conçu pour être léger, facile à transporter et simple à assembler.",
+      "paragraph2": "Nos mobil-homes et unités modulaires sont pensés pour des usages résidentiels, de loisirs ou de travail mobile. Le concept repose sur une construction intelligente, des matériaux de qualité et une finition premium.",
+      "card1_title": "Design modulable",
+      "card1_desc": "Des espaces optimisés, un aménagement flexible et des finitions haut de gamme qui s'adaptent à vos usages.",
+      "card2_title": "Mobilité maîtrisée",
+      "card2_desc": "Des structures étudiées pour le transport routier, le montage rapide et l'installation sur site sans compromis sur le confort.",
+      "why_title": "Pourquoi choisir Williams Mobil ?",
+      "why1": "Habitat mobile et durable, compatible avec des modes de vie modernes.",
+      "why2": "Matériaux de qualité pour une longévité renforcée.",
+      "why3": "Soutien personnalisé à chaque étape, de la sélection du modèle à la livraison."
+    },
+    "tech": {
+      "intro": "Nous utilisons des matériaux soigneusement sélectionnés pour offrir robustesse, isolation et légèreté dans chaque modèle.",
+      "materials_title": "Matériaux performants",
+      "materials_desc": "Châssis acier renforcé, ossature aluminium et panneaux isolants haute performance garantissent une structure stable et durable, tout en limitant le poids pour le transport.",
+      "isolation_title": "Isolation et confort",
+      "isolation_p1": "L'isolation thermique et acoustique est optimisée pour maintenir une température agréable en toutes saisons et réduire les nuisances extérieures.",
+      "isolation_p2": "Nos solutions intègrent des systèmes de chauffage, de ventilation et d'éclairage à haut rendement énergétique.",
+      "finish_title": "Finition & entretien",
+      "finish_desc": "Chaque mobile-home est livré avec des finitions soignées, des revêtements résistants et des équipements faciles à entretenir pour une utilisation durable et sereine."
+    },
+    "faq": {
+      "intro": "Retrouvez les réponses aux questions les plus courantes sur nos habitats modulaires, la livraison et les conditions d'achat.",
+      "q1": "Comment se déroule la livraison ?",
+      "a1": "Nous coordonnons la livraison directement sur site. Le modèle est transporté par camion, puis installé avec une équipe dédiée pour assurer une mise en place sécurisée.",
+      "q2": "Faut-il un permis de construire ?",
+      "a2": "Selon la surface et le type d'habitation, une déclaration préalable ou un permis peut être nécessaire. Nous vous accompagnons dans les démarches administratives.",
+      "q3": "Quels types de sols sont compatibles ?",
+      "a3": "Nos structures peuvent être installées sur terrain préparé, dalle béton, plots ou terrain stabilisé. Un diagnostic préalable permet de valider la meilleure configuration.",
+      "q4": "Peut-on personnaliser l'intérieur ?",
+      "a4": "Oui, nous proposons des options d'aménagement, de couleurs et d'équipements pour adapter chaque modèle à votre usage personnel ou professionnel.",
+      "q5": "Quel est le délai de fabrication ?",
+      "a5": "Les délais varient selon le modèle et les spécificités. En général, la fabrication et la préparation prennent quelques semaines avant la livraison."
+    },
+    "privacy": {
+      "intro": "Nous collectons uniquement les données nécessaires pour traiter vos demandes, préparer vos commandes et améliorer votre expérience sur le site.",
+      "data_title": "Données collectées",
+      "data_desc": "Lors de votre commande ou de votre contact, nous recueillons des informations comme votre nom, votre adresse e-mail, votre adresse postale et vos coordonnées de livraison.",
+      "purpose_title": "Finalité",
+      "purpose_desc": "Ces données servent à traiter les commandes, gérer les livraisons, répondre aux demandes clients et assurer le suivi administratif et commercial.",
+      "retention_title": "Conservation des données",
+      "retention_desc": "Nous conservons vos informations uniquement pendant la durée nécessaire à la gestion de votre commande et conformément aux obligations légales.",
+      "security_title": "Sécurité",
+      "security_desc": "Nous mettons en place des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès non autorisé."
+    },
+    "terms": {
+      "intro": "En utilisant notre site, vous acceptez les conditions générales de vente, les modalités de paiement et les engagements de service associés à nos offres.",
+      "order_title": "Commande et paiement",
+      "order_desc": "La validation de votre commande intervient après confirmation du paiement. Les délais de livraison sont précisés lors de la commande et peuvent varier selon la destination.",
+      "cancel_title": "Annulation et retour",
+      "cancel_desc": "Toute annulation doit être demandée rapidement. En fonction de l'état d'avancement de la production, des frais peuvent s'appliquer.",
+      "liability_title": "Responsabilité",
+      "liability_desc": "Williams Mobil s'engage à fournir des produits conformes. La responsabilité reste limitée aux obligations prévues par le droit de la consommation et la réglementation applicable."
+    },
+    "cookies": {
+      "intro": "Nous utilisons des cookies pour améliorer votre navigation, analyser les performances du site et personnaliser votre expérience.",
+      "technical_title": "Cookies techniques",
+      "technical_desc": "Ces cookies sont indispensables au bon fonctionnement du site : gestion du panier, sécurité et comportement de base de la navigation.",
+      "analytics_title": "Cookies analytiques",
+      "analytics_desc": "Nous utilisons des cookies analytiques pour mesurer l'audience, identifier les pages les plus visitées et améliorer en continu notre service.",
+      "preferences_title": "Gestion des préférences",
+      "preferences_desc": "Vous pouvez accepter ou refuser les cookies via le bandeau de cookie ou en ajustant les paramètres de votre navigateur."
+    },
+    "mentions": {
+      "intro": "Informations légales et mentions obligatoires concernant Williams MobilHome International.",
+      "editor_title": "Éditeur du site",
+      "editor_text": "Williams MobilHome International\nSiège social : 12 rue du Mobil, 75000 Paris\nSIRET : 123 456 789 00010",
+      "director_title": "Directeur de publication",
+      "director_text": "Monsieur William Mobil",
+      "host_title": "Hébergeur",
+      "host_text": "Nom de l'hébergeur : OVHcloud\nAdresse : 2 rue Kellermann, 59100 Roubaix"
+    }
+  },
   "categories": {
     "all": "Tous",
     "conteneur": "Conteneur",
