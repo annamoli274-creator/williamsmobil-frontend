@@ -149,7 +149,7 @@ const Navbar = ({ lang, dict }: NavbarProps) => {
             alt="Williams Mobilhome"
             width={1085}
             height={60}
-            className="object-contain h-16 w-auto"
+            className="object-contain h-20 w-auto"
           />
         </Link>
 

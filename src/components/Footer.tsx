@@ -27,19 +27,19 @@ const Footer = ({ lang, dict }: FooterProps) => {
   const localePrefix = `/${lang}`;
 
   return (
-    <footer className="bg-zinc-50 border-t border-zinc-200 pt-16 pb-8 px-6 text-zinc-800">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-zinc-50 border-t border-zinc-200 pt-10 pb-6 px-6 text-zinc-800">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         <div className="col-span-1 md:col-span-1">
           <Link
             href={`${localePrefix}`}
-            className="flex items-center gap-2 mb-6"
+            className="flex items-center gap-2 mb-5"
           >
             <img
               src="/images/logo.png"
               alt="Williams Mobilhome"
               width={200}
               height={80}
-              className="object-contain h-12 md:h-16 w-auto"
+              className="object-contain h-10 md:h-12 w-auto"
             />
           </Link>
           <p className="text-zinc-700 mb-6 leading-relaxed">
