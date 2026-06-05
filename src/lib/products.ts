@@ -463,7 +463,7 @@ export const products: Product[] = [
   {
     id: "caravane-imagb",
     title: "Montre Dethleffs Trend T7057 DBM d'occasion",
-    price: "12.000 €",
+    price: "12000 €",
     image:
       "/images/caravane/imagb/WhatsApp Image 2026-05-16 at 01.40.56 (1).jpeg",
     gallery: [
@@ -504,7 +504,7 @@ export const products: Product[] = [
   {
     id: "caravane-imga",
     title: "Camping-car SUNLIGHT 540V",
-    price: "11.000 €",
+    price: "11000 €",
     image: "/images/caravane/imga/WhatsApp Image 2026-05-16 at 06.41.56.jpeg",
     gallery: [
       "/images/caravane/imga/WhatsApp Image 2026-05-16 at 06.41.56.jpeg",
@@ -664,7 +664,7 @@ export const products: Product[] = [
   {
     id: "caravane-imge",
     title: "Laika Kosmo L 319",
-    price: "24 000 €",
+    price: "24000 €",
     image: "/images/caravane/imge/WhatsApp Image 2026-05-16 at 01.44.20.jpeg",
     gallery: [
       "/images/caravane/imge/WhatsApp Image 2026-05-16 at 01.44.20.jpeg",
@@ -710,7 +710,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgf",
     title: "Sun Living S 70SL d'occasion",
-    price: "21 000 €",
+    price: "21000 €",
     image: "/images/caravane/imgf/WhatsApp Image 2026-05-16 at 06.42.49.jpeg",
     gallery: [
       "/images/caravane/imgf/WhatsApp Image 2026-05-16 at 06.42.49.jpeg",
@@ -763,7 +763,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgg",
     title: "Weinsberg CaraOne 390 QD 750 kg",
-    price: "6 000 €",
+    price: "6000 €",
     image:
       "/images/caravane/imgg/WhatsApp Image 2026-05-16 at 06.43.09 (1).jpeg",
     gallery: [
@@ -820,7 +820,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgh",
     title: "Beachy 360 2024 d'occasion",
-    price: "6 000 €",
+    price: "6000 €",
     image:
       "/images/caravane/imgh/WhatsApp Image 2026-05-16 at 06.43.38 (1).jpeg",
     gallery: [
@@ -870,7 +870,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgi",
     title: "CARAVANE CARPENTO 310 D'OCCASION",
-    price: "5 800 €",
+    price: "5800 €",
     image: "/images/caravane/imgi/WhatsApp Image 2026-05-16 at 06.44.07.jpeg",
     gallery: [
       "/images/caravane/imgi/WhatsApp Image 2026-05-16 at 06.44.07.jpeg",
@@ -920,7 +920,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgj",
     title: "Caravane T@B 320 d'occasion",
-    price: "4 200 €",
+    price: "4200 €",
     image:
       "/images/caravane/imgj/WhatsApp Image 2026-05-16 at 06.44.37 (1).jpeg",
     gallery: [
@@ -973,7 +973,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgk",
     title: "PÖSSL ROADY Vario 545 D'OCCASION",
-    price: "9 900 €",
+    price: "9900 €",
     image: "/images/caravane/imgk/WhatsApp Image 2026-05-16 at 06.45.09.jpeg",
     gallery: [
       "/images/caravane/imgk/WhatsApp Image 2026-05-16 at 06.45.09.jpeg",
@@ -1028,7 +1028,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgm",
     title: "SUNLIGHT T 60 D'OCCASION",
-    price: "11 000 €",
+    price: "11000 €",
     image:
       "/images/caravane/imgm/WhatsApp Image 2026-05-16 at 06.45.49 (3).jpeg",
     gallery: [
@@ -1182,7 +1182,7 @@ export const products: Product[] = [
   {
     id: "remorque-imgd",
     title: "Remorque benne basculante manuelle renforcée - Modèle Boxer ",
-    price: "1 250 €",
+    price: "1250 €",
     image: "/images/remorque/imgd/WhatsApp Image 2026-05-16 at 06.47.19.jpeg",
     gallery: [
       "/images/remorque/imgd/WhatsApp Image 2026-05-16 at 06.47.19.jpeg",
@@ -1296,7 +1296,7 @@ export const products: Product[] = [
   {
     id: "remorque-imgh",
     title: "Remorque benne hydraulique simple essieu - Modèle Dumper H",
-    price: "2 400 €",
+    price: "2400 €",
     image: "/images/remorque/imgh/WhatsApp Image 2026-05-16 at 06.47.00.jpeg",
     gallery: [
       "/images/remorque/imgh/WhatsApp Image 2026-05-16 at 06.47.00.jpeg",
@@ -1323,7 +1323,7 @@ export const products: Product[] = [
   {
     id: "remorque-imgi",
     title: "Remorque porte-engins renforcée à rampes - Modèle Force I",
-    price: "3 900 €",
+    price: "3900 €",
     image: "/images/remorque/imgi/WhatsApp Image 2026-05-16 at 06.47.46.jpeg",
     gallery: [
       "/images/remorque/imgi/WhatsApp Image 2026-05-16 at 06.47.46.jpeg",
@@ -1353,7 +1353,7 @@ export const products: Product[] = [
   {
     id: "remorque-imgj",
     title: "Remorque plateau ridelles aluminium - Modèle Swift J",
-    price: "1 750 €",
+    price: "1750 €",
     image:
       "/images/remorque/imgj/WhatsApp Image 2026-05-16 at 06.48.30 (2).jpeg",
     gallery: [
@@ -1385,7 +1385,7 @@ export const products: Product[] = [
     id: "remorque-imgk",
     title:
       "Remorque utilitaire multi-ridelles avec rehausses grillage - Modèle Green K",
-    price: "1 650 €",
+    price: "1650 €",
     image: "/images/remorque/imgk/WhatsApp Image 2026-05-16 at 06.47.58.jpeg",
     gallery: [
       "/images/remorque/imgk/WhatsApp Image 2026-05-16 at 06.47.58.jpeg",
@@ -1413,7 +1413,7 @@ export const products: Product[] = [
   {
     id: "remorque-imgl",
     title: "Remorque plateau basculant léger pour quads - Modèle Quad L",
-    price: "1 450 €",
+    price: "1450 €",
     image:
       "/images/remorque/imgl/WhatsApp Image 2026-05-16 at 06.47.58 (2).jpeg",
     gallery: [
@@ -1471,8 +1471,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imga",
     title: "Mobil-home Prestige - Villa d'Azur",
-    price: "13.750 €",
-    oldPrice: "14.950 €",
+    price: "13750 €",
+    oldPrice: "14950 €",
     discount: "8%",
     image:
       "/images/mobilehome/imga/WhatsApp Image 2026-05-18 at 16.27.24 (1).jpeg",
@@ -1510,8 +1510,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgb",
     title: "Mobil-home Lodge - Horizon Sauvage",
-    price: "11.785 €",
-    oldPrice: "12.950 €",
+    price: "11785 €",
+    oldPrice: "12950 €",
     discount: "9%",
     image:
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.46 (1).jpeg",
@@ -1549,8 +1549,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgc",
     title: "Mobil-home Suite - Royal Comfort",
-    price: "12.555 €",
-    oldPrice: "13.950 €",
+    price: "12555 €",
+    oldPrice: "13950 €",
     discount: "10%",
     image:
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.11 (1).jpeg",
@@ -1586,8 +1586,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgd",
     title: "Mobil-home Family - Espace & Partage",
-    price: "30.315 €",
-    oldPrice: "32.950 €",
+    price: "30315 €",
+    oldPrice: "32950 €",
     discount: "8%",
     image:
       "/images/mobilehome/imgd/WhatsApp Image 2026-05-18 at 16.30.06 (1).jpeg",
@@ -1626,8 +1626,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imge",
     title: "Mobil-home Tiny - Cocon Nordique",
-    price: "16.325 €",
-    oldPrice: "17.950 €",
+    price: "16325 €",
+    oldPrice: "17950 €",
     discount: "9%",
     image:
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.36 (1).jpeg",
@@ -1665,8 +1665,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgf",
     title: "Mobil-home Loft - Vue Panoramique",
-    price: "26.055 €",
-    oldPrice: "28.950 €",
+    price: "26055 €",
+    oldPrice: "28950 €",
     discount: "10%",
     image:
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.58 (1).jpeg",
@@ -1705,8 +1705,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgg",
     title: "Mobil-home Chalet - Tradition Bois",
-    price: "17.480 €",
-    oldPrice: "19.000 €",
+    price: "17480 €",
+    oldPrice: "19000 €",
     discount: "8%",
     image:
       "/images/mobilehome/imgg/WhatsApp Image 2026-05-18 at 16.31.29 (1).jpeg",
@@ -1743,8 +1743,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgh",
     title: "Mobil-home Urban - Studio Chic",
-    price: "15.982 €",
-    oldPrice: "17.580 €",
+    price: "15982 €",
+    oldPrice: "17580 €",
     discount: "9%",
     image:
       "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.37 (1).jpeg",
@@ -1782,8 +1782,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgi",
     title: "Mobil-home Oasis - Esprit Nature",
-    price: "20.241 €",
-    oldPrice: "22.490 €",
+    price: "20241 €",
+    oldPrice: "22490 €",
     discount: "10%",
     image:
       "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.37 (1).jpeg",
@@ -1823,8 +1823,8 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgj",
     title: "Mobil-home Exclusive - Villa Impériale",
-    price: "112.700 €",
-    oldPrice: "122.500 €",
+    price: "112700 €",
+    oldPrice: "122500 €",
     discount: "8%",
     image:
       "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.30 (1).jpeg",
