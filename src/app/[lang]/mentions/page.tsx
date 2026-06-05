@@ -15,16 +15,16 @@ export default async function MentionsPage(props: {
     {
       title: content?.editor_title || "Éditeur du site",
       description: content?.editor_text ||
-        "Williams MobilHome International\nSiège social : 12 rue du Mobil, 75000 Paris\nSIRET : 123 456 789 00010",
+        "Williams MobilHome International\nSiège social : Avenida de America,  28002 Madrid, espanã : +34 610 70 69 19",
     },
     {
       title: content?.director_title || "Directeur de publication",
-      description: content?.director_text || "Monsieur William Mobil",
+      description: content?.director_text || "Monsieur Williams ",
     },
     {
       title: content?.host_title || "Hébergeur",
       description: content?.host_text ||
-        "Nom de l’hébergeur : OVHcloud\nAdresse : 2 rue Kellermann, 59100 Roubaix",
+        "Nom de l’hébergeur : OVHcloud\nAdresse : 2 rue Rodriguo, 59100 Espagne",
     },
   ];
 
