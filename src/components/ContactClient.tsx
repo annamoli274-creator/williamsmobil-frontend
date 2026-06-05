@@ -200,10 +200,10 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                     <div className="flex gap-2">
                       <select className="w-1/4 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900">
                         <option value="+34">+34</option>
-                        <option value="+1">+1</option>
-                        <option value="+44">+44</option>
-                        <option value="+33">+33</option>
+                        <option value="+31">+31</option>
                         <option value="+49">+49</option>
+                        <option value="+33">+33</option>
+                        <option value="+32">+32</option>
                       </select>
                       <input
                         type="tel"
