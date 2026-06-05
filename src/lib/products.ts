@@ -1558,7 +1558,7 @@ export const products: Product[] = [
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.11 (1).jpeg",
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.11 (2).jpeg",
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.11 (3).jpeg",
-      "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.11.jpeg",
+      
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.12 (1).jpeg",
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.12 (2).jpeg",
       "/images/mobilehome/imgc/WhatsApp Image 2026-05-18 at 16.28.12 (3).jpeg",
@@ -1637,7 +1637,7 @@ export const products: Product[] = [
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.36 (3).jpeg",
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.36 (4).jpeg",
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.36 (5).jpeg",
-      "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.36.jpeg",
+     
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.37 (1).jpeg",
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.37 (2).jpeg",
       "/images/mobilehome/imge/WhatsApp Image 2026-05-18 at 16.30.37 (3).jpeg",
