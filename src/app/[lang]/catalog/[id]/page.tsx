@@ -2,6 +2,7 @@ import React from "react";
 import { getDictionary } from "@/get-dictionary";
 import { Locale, i18n } from "@/i18n-config";
 import ProductDetailContent from "@/components/ProductDetailContent";
+import { getLocalizedProducts } from "@/lib/localize-products";
 import { products } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -22,11 +23,11 @@ export default async function ProductDetailPage(props: {
 }) {
   const { lang, id } = await props.params;
   const dict = await getDictionary(lang);
+  const localizedProducts = await getLocalizedProducts(lang);
 
-  const product = products.find(p => p.id === id) || products[0];
-  
-  // Get other products for related section
-  const relatedProducts = products
+  const product = localizedProducts.find((p) => p.id === id) || localizedProducts[0];
+
+  const relatedProducts = localizedProducts
     .filter(p => p.id !== product.id)
     .slice(0, 3);
 

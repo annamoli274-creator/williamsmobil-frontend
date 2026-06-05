@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { getDictionary } from "@/get-dictionary";
 import { Locale, i18n } from "@/i18n-config";
-import { products } from "@/lib/products";
+import { getLocalizedProducts } from "@/lib/localize-products";
 import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -20,6 +20,7 @@ export default async function CatalogPage(props: {
 
   const activeCategory = category || "all";
 
+  const products = await getLocalizedProducts(lang);
   const filteredProducts =
     activeCategory !== "all"
       ? products.filter((p) => p.category === activeCategory)

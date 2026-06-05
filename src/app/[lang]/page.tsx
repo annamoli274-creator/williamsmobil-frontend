@@ -7,7 +7,7 @@ import BrandMarquee from "@/components/BrandMarquee";
 import ReviewSection from "@/components/ReviewSection";
 import { getDictionary } from "@/get-dictionary";
 import { Locale, i18n } from "@/i18n-config";
-import { products } from "@/lib/products";
+import { getLocalizedProducts } from "@/lib/localize-products";
 import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -20,7 +20,7 @@ export default async function Home(props: {
   const { lang } = await props.params;
   const dict = await getDictionary(lang);
 
-  const featuredProducts = products.slice(0, 3);
+  const featuredProducts = (await getLocalizedProducts(lang)).slice(0, 3);
 
   return (
     <div>
