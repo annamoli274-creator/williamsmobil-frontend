@@ -177,8 +177,8 @@ const Footer = ({ lang, dict }: FooterProps) => {
           <span>FR</span>
           <span>EN</span>
           <span>ES</span>
-          <span>DE</span>
-          <span>IT</span>
+          <span>BE</span>
+          <span>NL</span>
         </div>
       </div>
     </footer>
