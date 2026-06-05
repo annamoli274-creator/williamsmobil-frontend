@@ -15,6 +15,35 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    id: "conteneur-imgk",
+    title: "Nouveau conteneur rouge de 20 pieds à ouverture latérale",
+    price: "2550 €",
+    image: "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.03.jpeg",
+    gallery: [
+      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.03.jpeg",
+      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.13.jpeg",
+      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.14.jpeg",
+      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.16.jpeg",
+      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.24.jpeg",
+    ],
+    description:
+      "Conteneur maritime neuf de 6 mètres (20 pieds) à ouverture latérale totale par portes battantes. Accès complet par le côté et par les doubles portes arrière. Intérieur propre avec plancher en contreplaqué. Poids maximal supporté : 16 000 kg. Idéal pour le chargement et le déchargement rapides, les salons professionnels, les événements ou un usage commercial.",
+    features: [
+      "Structure en acier galvanisé",
+      "Isolation thermique performante",
+      "Installation rapide",
+      "Personnalisable",
+    ],
+    category: "conteneur",
+    specs: {
+      dimensions: "6.06m × 2.44m × 2.59m",
+      weight: "3.600 kg",
+      payload: "12.400 kg",
+      material: "Acier Corten",
+      status: "Neuf - Jamais utilisé",
+      colors: "Rouge / RAL 3026",
+    },
+  },  {
     id: "conteneur-imgb",
     title:
       "Maison conteneur de 6 mètres, rouge bordeaux, avec salle de bain et cuisine",
@@ -304,36 +333,7 @@ export const products: Product[] = [
       colors: "Marron / Rouge Rouille",
     },
   },
-  {
-    id: "conteneur-imgk",
-    title: "Nouveau conteneur rouge de 20 pieds à ouverture latérale",
-    price: "2490 €",
-    image: "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.03.jpeg",
-    gallery: [
-      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.03.jpeg",
-      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.13.jpeg",
-      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.14.jpeg",
-      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.16.jpeg",
-      "/images/conteneur/imgk/WhatsApp Image 2026-05-15 at 11.29.24.jpeg",
-    ],
-    description:
-      "Conteneur maritime neuf de 6 mètres (20 pieds) à ouverture latérale totale par portes battantes. Accès complet par le côté et par les doubles portes arrière. Intérieur propre avec plancher en contreplaqué. Poids maximal supporté : 16 000 kg. Idéal pour le chargement et le déchargement rapides, les salons professionnels, les événements ou un usage commercial.",
-    features: [
-      "Structure en acier galvanisé",
-      "Isolation thermique performante",
-      "Installation rapide",
-      "Personnalisable",
-    ],
-    category: "conteneur",
-    specs: {
-      dimensions: "6.06m × 2.44m × 2.59m",
-      weight: "3.600 kg",
-      payload: "12.400 kg",
-      material: "Acier Corten",
-      status: "Neuf - Jamais utilisé",
-      colors: "Rouge / RAL 3026",
-    },
-  },
+
   {
     id: "conteneur-imgl",
     title: "Conteneur bleu neuf de 20 pieds avec double porte",
