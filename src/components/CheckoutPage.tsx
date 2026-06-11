@@ -258,7 +258,7 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
   const [cardForceDisabled, setCardForceDisabled] = useState(false);
 
   // Selected Payment Method
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("virement");
 
   const localePrefix = lang ? `/${lang}` : "";
 
@@ -268,14 +268,8 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
   );
 
   useEffect(() => {
-    if (totalPrice > 0) {
-      if (totalPrice <= 1500 && !cardForceDisabled) {
-        setSelectedPaymentMethod("card");
-      } else {
-        setSelectedPaymentMethod("paypal");
-      }
-    }
-  }, [totalPrice, cardForceDisabled]);
+    setSelectedPaymentMethod("virement");
+  }, [totalPrice]);
 
   useEffect(() => {
     let mounted = true;
@@ -825,36 +819,7 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                   <h3 className="text-2xl font-black">{text.paymentMode}</h3>
                 </div>
                 <div className="space-y-4">
-                  {/* Option 1: Carte (only if total <= 1500 & not force-disabled) */}
-                  {totalPrice <= 1500 && !cardForceDisabled && (
-                    <button
-                      type="button"
-                      onClick={() => setSelectedPaymentMethod("card")}
-                      className={`glass p-6 rounded-2xl flex justify-between items-center cursor-pointer transition-all duration-300 w-full text-left ${
-                        selectedPaymentMethod === "card"
-                          ? "border-primary bg-primary/5 ring-1 ring-primary"
-                          : "opacity-70 hover:opacity-100"
-                      }`}
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-8 bg-zinc-800 rounded-md flex items-center justify-center font-bold text-[8px] text-white">
-                          CARD
-                        </div>
-                        <div>
-                          <div className="font-bold">{text.card}</div>
-                        </div>
-                      </div>
-                      <div
-                        className={`w-5 h-5 rounded-full border ${
-                          selectedPaymentMethod === "card"
-                            ? "border-4 border-primary"
-                            : "border-glass-border"
-                        }`}
-                      />
-                    </button>
-                  )}
-
-                  {/* Option 2: PayPal */}
+                  {/* Option 1: PayPal */}
                   <button
                     type="button"
                     onClick={() => setSelectedPaymentMethod("paypal")}
@@ -881,7 +846,7 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                     />
                   </button>
 
-                  {/* Option 3: Virement Bancaire */}
+                  {/* Option 2: Virement Bancaire */}
                   <button
                     type="button"
                     onClick={() => setSelectedPaymentMethod("virement")}
@@ -911,91 +876,6 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
 
                 {/* Sub-Forms based on selected option */}
                 <AnimatePresence mode="wait">
-                  {selectedPaymentMethod === "card" && (
-                    <motion.div
-                      key="cardForm"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="bg-white/5 rounded-2xl p-6 space-y-4"
-                    >
-                      <h4 className="text-sm font-bold text-primary font-serif mb-2">
-                        {text.cardDetails}
-                      </h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="col-span-2">
-                          <label className="text-[10px] uppercase font-bold opacity-50 ml-2">
-                            {text.cardName}
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Ex: Juan García"
-                            className="w-full glass p-3.5 rounded-xl focus:ring-1 focus:ring-primary outline-none mt-1 text-sm text-zinc-900"
-                            value={cardName}
-                            onChange={(e) => setCardName(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-span-2">
-                          <label className="text-[10px] uppercase font-bold opacity-50 ml-2">
-                            {text.cardNumber}
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            maxLength={19}
-                            placeholder="4000 1234 5678 9010"
-                            className="w-full glass p-3.5 rounded-xl focus:ring-1 focus:ring-primary outline-none mt-1 text-sm font-mono text-zinc-900"
-                            value={cardNumber}
-                            onChange={(e) => {
-                              const val = e.target.value
-                                .replace(/\D/g, "")
-                                .replace(/(\d{4})/g, "$1 ")
-                                .trim();
-                              setCardNumber(val);
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <label className="text-[10px] uppercase font-bold opacity-50 ml-2">
-                            {text.cardExpiry}
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            maxLength={5}
-                            placeholder="MM/AA"
-                            className="w-full glass p-3.5 rounded-xl focus:ring-1 focus:ring-primary outline-none mt-1 text-sm font-mono text-zinc-900"
-                            value={cardExpiry}
-                            onChange={(e) => {
-                              let val = e.target.value.replace(/\D/g, "");
-                              if (val.length >= 2) {
-                                val = val.slice(0, 2) + "/" + val.slice(2, 4);
-                              }
-                              setCardExpiry(val);
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <label className="text-[10px] uppercase font-bold opacity-50 ml-2">
-                            {text.cardCvv}
-                          </label>
-                          <input
-                            type="password"
-                            required
-                            maxLength={3}
-                            placeholder="123"
-                            className="w-full glass p-3.5 rounded-xl focus:ring-1 focus:ring-primary outline-none mt-1 text-sm font-mono text-zinc-900"
-                            value={cardCvv}
-                            onChange={(e) =>
-                              setCardCvv(e.target.value.replace(/\D/g, ""))
-                            }
-                          />
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-
                   {selectedPaymentMethod === "paypal" && (
                     <motion.div
                       key="paypalForm"
@@ -1007,32 +887,12 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                       <h4 className="text-sm font-bold text-primary font-serif mb-2">
                         PayPal
                       </h4>
-                      <div className="space-y-4">
-                        <p className="text-[11px] leading-relaxed opacity-70">
-                          {currentLang === "es"
-                            ? "Al hacer clic en Pagar con PayPal, se le redirigirá a PayPal para iniciar sesión y completar el pago."
-                            : currentLang === "en"
-                              ? "By clicking Pay with PayPal, you will be redirected to PayPal to login and complete your payment."
-                              : "En cliquant sur Payer avec PayPal, vous serez redirigé vers PayPal pour vous connecter et finaliser votre paiement."}
-                        </p>
-                        <button
-                          type="button"
-                          onClick={handlePayPalCheckout}
-                          disabled={paypalProcessing}
-                          className="w-full bg-[#003087] hover:bg-[#002266] text-white font-bold py-4 rounded-2xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                          {paypalProcessing
-                            ? currentLang === "es"
-                              ? "Redirigiendo a PayPal..."
-                              : currentLang === "en"
-                                ? "Redirecting to PayPal..."
-                                : "Redirection vers PayPal..."
-                            : currentLang === "es"
-                              ? "Pagar con PayPal"
-                              : currentLang === "en"
-                                ? "Pay with PayPal"
-                                : "Payer avec PayPal"}
-                        </button>
+                      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900">
+                        {currentLang === "es"
+                          ? "Este método de pago no está disponible temporalmente. Le invitamos a continuar con la transferencia bancaria."
+                          : currentLang === "en"
+                            ? "This payment method is temporarily unavailable. We invite you to continue with bank transfer."
+                            : "Ce mode de paiement est momentanément indisponible. Nous vous invitons à poursuivre avec le virement bancaire."}
                       </div>
                     </motion.div>
                   )}
@@ -1048,12 +908,14 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                       <h4 className="text-sm font-bold text-primary font-serif mb-2">
                         {text.bank}
                       </h4>
-                      <div className="rounded-2xl border border-red-200 bg-red-50 p-5 text-sm text-red-900">
-                        {currentLang === "es"
-                          ? "El pago por transferencia bancaria aún no está disponible. Por favor, elija otro método de pago."
-                          : currentLang === "en"
-                            ? "Bank transfer payment is not available yet. Please choose another payment method."
-                            : "Le paiement par virement bancaire n'est pas encore disponible. Veuillez choisir un autre mode de paiement."}
+                      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 text-sm text-zinc-900">
+                        <p className="leading-relaxed">
+                          {currentLang === "es"
+                            ? "Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp. Se le enviarán los datos de pago para que pueda realizar el pago y validar su pedido para su procesamiento y entrega."
+                            : currentLang === "en"
+                              ? "By finalizing and validating your order, you will be contacted by email or WhatsApp by an agent of our company. The payment details will then be sent to you so that you can make the payment and validate your order for processing and delivery."
+                              : "En finalisant et validant votre commande, vous serez contacté par e-mail ou par WhatsApp par un agent de notre entreprise. Les informations de paiement vous seront alors transmises afin que vous puissiez effectuer le règlement et valider votre commande pour son traitement et sa livraison."}
+                        </p>
                       </div>
                     </motion.div>
                   )}
@@ -1078,30 +940,14 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                         return;
                       }
 
-                      // Card validation
-                      if (selectedPaymentMethod === "card") {
-                        if (
-                          !cardName.trim() ||
-                          !cardNumber.trim() ||
-                          !cardExpiry.trim() ||
-                          !cardCvv.trim()
-                        ) {
-                          setErrorMessage(text.errorRequired);
-                          return;
-                        }
-                        // If everything is correct, trigger elegant "momentarily unavailable" modal and force Paypal/Bank transfer selection
-                        setShowCardUnavailableModal(true);
-                        return;
-                      }
-
                       // PayPal validation
-                      if (selectedPaymentMethod === "virement") {
+                      if (selectedPaymentMethod === "paypal") {
                         setErrorMessage(
                           currentLang === "es"
-                            ? "El pago por transferencia bancaria aún no está disponible."
+                            ? "El pago por PayPal no está disponible en este momento. Por favor, seleccione Transferencia Bancaria."
                             : currentLang === "en"
-                              ? "Bank transfer payment is not available yet."
-                              : "Le paiement par virement bancaire n'est pas encore disponible.",
+                              ? "PayPal payment is currently unavailable. Please select Bank Transfer."
+                              : "Le paiement par PayPal est indisponible pour le moment. Veuillez sélectionner le Virement Bancaire.",
                         );
                         return;
                       }
@@ -1168,10 +1014,13 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                           : "Paiement via"}
                     </span>
                     <span className="font-bold text-emerald-700">
-                      {selectedPaymentMethod === "card" && "Carte Bancaire"}
                       {selectedPaymentMethod === "paypal" && "PayPal"}
                       {selectedPaymentMethod === "virement" &&
-                        `Virement Bancaire (Preuve: ${paymentProofFile?.name || ""})`}
+                        (currentLang === "es"
+                          ? "Transferencia Bancaria"
+                          : currentLang === "en"
+                            ? "Bank Transfer"
+                            : "Virement Bancaire")}
                     </span>
                   </div>
                   <div className="flex justify-between text-sm border-t border-zinc-200 pt-4 mt-2">
@@ -1318,64 +1167,6 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
         )}
       </AnimatePresence>
 
-      {/* Custom Elegant Card Unavailability Modal */}
-      <AnimatePresence>
-        {showCardUnavailableModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/85 backdrop-blur-sm z-[999] flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-[#0a0a0a]/98 border border-primary/20 p-8 rounded-[2.5rem] max-w-md w-full text-center shadow-2xl relative text-slate-100"
-            >
-              <div className="w-16 h-16 bg-amber-500/20 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h4 className="text-xl font-bold font-serif mb-3 text-amber-400">
-                {text.cardUnavailable}
-              </h4>
-              <p className="text-sm text-slate-300 leading-relaxed mb-6 px-2">
-                {currentLang === "es"
-                  ? "El pago mediante tarjeta bancaria no está disponible en este momento debido a un mantenimiento técnico de nuestra pasarela de pago local. Por favor, seleccione PayPal o Transferencia Bancaria para finalizar su pedido de forma segura."
-                  : currentLang === "en"
-                    ? "Credit card payment is currently unavailable due to technical maintenance of our local payment gateway. Please select PayPal or Bank Transfer to complete your order securely."
-                    : "Le paiement par carte bancaire est temporairement indisponible en raison d'une maintenance technique de notre passerelle de paiement locale. Veuillez sélectionner PayPal ou le Virement Bancaire pour finaliser votre commande en toute sécurité."}
-              </p>
-              <button
-                onClick={() => {
-                  setShowCardUnavailableModal(false);
-                  setCardForceDisabled(true);
-                  setSelectedPaymentMethod("paypal");
-                }}
-                className="w-full bg-primary text-white py-3.5 rounded-xl font-bold hover:bg-primary-light transition-all shadow-lg cursor-pointer"
-              >
-                {currentLang === "es"
-                  ? "Usar otros métodos"
-                  : currentLang === "en"
-                    ? "Use other methods"
-                    : "Utiliser les autres modes"}
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

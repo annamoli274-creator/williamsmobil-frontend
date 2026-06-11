@@ -30,6 +30,7 @@ export default async function Home(props: {
         description={dict.hero.description}
         ctaPrimary={dict.hero.cta_primary}
         ctaSecondary={dict.hero.cta_secondary}
+        lang={lang}
       />
 
       {/* Category Browse Section */}
