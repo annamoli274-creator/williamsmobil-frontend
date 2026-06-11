@@ -79,16 +79,16 @@ const Hero = ({
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16">
             <Link href={`/${lang}/catalog`} className="inline-block">
-              <motion.button
+              <motion.span
                 whileHover={{
                   scale: 1.03,
                   boxShadow: "0 0 25px rgba(255, 255, 255, 0.2)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="premium-gradient text-white px-6 py-3.5 rounded-2xl font-black text-[11px] uppercase tracking-widest flex items-center gap-2 transition-all shadow-xl font-sans cursor-pointer"
+                className="premium-gradient text-white px-6 py-3.5 rounded-2xl font-black text-[11px] uppercase tracking-widest flex items-center gap-2 transition-all shadow-xl font-sans cursor-pointer inline-flex"
               >
                 {ctaPrimary} <ArrowRight className="w-4 h-4 ml-1" />
-              </motion.button>
+              </motion.span>
             </Link>
           </div>
 

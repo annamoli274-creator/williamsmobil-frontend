@@ -152,13 +152,19 @@ const Footer = ({ lang, dict }: FooterProps) => {
           <ul className="flex flex-col gap-4 text-zinc-700">
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-black" />{" "}
-              <a href="mailto:contact@williamsmobilhome.com" className="hover:text-black transition-colors">
+              <a
+                href="mailto:contact@williamsmobilhome.com"
+                className="hover:text-black transition-colors"
+              >
                 contact@williamsmobilhome.com
               </a>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-black" />{" "}
-              <a href="tel:+34610706919" className="hover:text-black transition-colors">
+              <a
+                href="tel:+34610706919"
+                className="hover:text-black transition-colors"
+              >
                 +34 610 70 69 19
               </a>
             </li>

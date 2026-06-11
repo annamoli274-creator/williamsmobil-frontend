@@ -1,166 +1,151 @@
 /**
- * Service Invoice PDF - Génération de factures
- * Prêt pour production
+ * Service Email - Version PRO robuste (IONOS + Railway)
  */
 
-import PDFDocument from "pdfkit";
+import nodemailer from "nodemailer";
 
-export interface InvoiceData {
-  orderNumber: string;
-  customerName: string;
-  customerEmail: string;
-  amount: number;
-  currency: string;
-  items: Array<{ name: string; quantity: number; price: number }>;
-  createdAt: Date;
+// 🔐 Vérification des variables d'environnement
+if (
+  !process.env.SMTP_HOST ||
+  !process.env.SMTP_PORT ||
+  !process.env.SMTP_USER ||
+  !process.env.SMTP_PASS
+) {
+  throw new Error("❌ Variables SMTP manquantes");
 }
 
-/**
- * Génère une facture PDF et retourne un buffer
- */
-export async function generateInvoicePdf(
-  invoiceData: InvoiceData
-): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    try {
-      const doc = new PDFDocument({
-        margin: 50,
-      });
+// ✅ Transporteur SMTP
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  secure: process.env.SMTP_SECURE === "true",
 
-      const chunks: Buffer[] = [];
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
 
-      doc.on("data", (chunk: Buffer) => chunks.push(chunk));
-      doc.on("end", () => {
-        const buffer = Buffer.concat(chunks);
-        resolve(buffer);
-      });
-      doc.on("error", reject);
+  tls: {
+    rejectUnauthorized: false,
+  },
 
-      // En-tête
-      doc.fontSize(20).font("Helvetica-Bold").text("INVOICE", { align: "center" });
-      doc.moveDown(0.5);
+  connectionTimeout: 10000, // 🔥 évite freeze
+  greetingTimeout: 10000,
+  socketTimeout: 15000,
+});
 
-      // Infos entreprise
-      doc
-        .fontSize(10)
-        .font("Helvetica")
-        .text("Williams Mobil", { align: "center" })
-        .text("Professional Rental Services", { align: "center" })
-        .moveDown(1);
-
-      // Numéro et date
-      doc
-        .fontSize(11)
-        .text(`Invoice #: ${invoiceData.orderNumber}`, 50)
-        .text(
-          `Date: ${invoiceData.createdAt.toLocaleDateString()}`,
-          50
-        )
-        .text(
-          `Due Date: ${new Date(invoiceData.createdAt.getTime() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString()}`,
-          50
-        )
-        .moveDown(1);
-
-      // Client
-      doc.fontSize(11).font("Helvetica-Bold").text("BILL TO:", 50);
-      doc
-        .font("Helvetica")
-        .text(invoiceData.customerName, 50)
-        .text(invoiceData.customerEmail, 50)
-        .moveDown(1);
-
-      // Tableau des items
-      const tableTop = doc.y;
-      const col1 = 50;
-      const col2 = 300;
-      const col3 = 380;
-      const col4 = 480;
-      const rowHeight = 25;
-
-      // En-têtes du tableau
-      doc
-        .fontSize(11)
-        .font("Helvetica-Bold")
-        .text("Item", col1, tableTop)
-        .text("Qty", col2, tableTop)
-        .text("Unit Price", col3, tableTop)
-        .text("Total", col4, tableTop);
-
-      doc
-        .moveTo(50, tableTop + 20)
-        .lineTo(550, tableTop + 20)
-        .stroke();
-
-      // Lignes
-      let currentY = tableTop + 30;
-      let subtotal = 0;
-
-      invoiceData.items.forEach((item) => {
-        const total = item.quantity * item.price;
-        subtotal += total;
-
-        doc
-          .fontSize(10)
-          .font("Helvetica")
-          .text(item.name.substring(0, 30), col1, currentY)
-          .text(item.quantity.toString(), col2, currentY)
-          .text(`$${item.price.toFixed(2)}`, col3, currentY)
-          .text(`$${total.toFixed(2)}`, col4, currentY);
-
-        currentY += rowHeight;
-      });
-
-      doc
-        .moveTo(50, currentY)
-        .lineTo(550, currentY)
-        .stroke();
-
-      currentY += 10;
-
-      // Totaux
-      doc
-        .fontSize(11)
-        .font("Helvetica")
-        .text(`Subtotal: $${subtotal.toFixed(2)}`, 350, currentY);
-
-      currentY += rowHeight;
-
-      doc.text(`Tax (0%): $0.00`, 350, currentY);
-
-      currentY += rowHeight;
-
-      doc
-        .font("Helvetica-Bold")
-        .text(
-          `TOTAL: $${invoiceData.amount.toFixed(2)} ${invoiceData.currency}`,
-          350,
-          currentY
-        );
-
-      currentY += rowHeight * 1.5;
-
-      // Footer
-      doc
-        .fontSize(9)
-        .font("Helvetica")
-        .moveTo(50, currentY)
-        .lineTo(550, currentY)
-        .stroke()
-        .text("Thank you for your business!", 50, currentY + 10, {
-          align: "center",
-        })
-        .text(
-          "For support, contact: support@williamsmobil.com",
-          50,
-          currentY + 25,
-          { align: "center" }
-        );
-
-      doc.end();
-    } catch (error) {
-      console.error("❌ PDF generation error:", error);
-      reject(error);
-    }
+// ✅ Vérification au démarrage (non bloquante)
+transporter
+  .verify()
+  .then(() => {
+    console.log("✅ SMTP prêt");
+  })
+  .catch((err) => {
+    console.error("❌ SMTP erreur:", err);
   });
+
+// 📦 Types
+export interface EmailOptions {
+  to: string;
+  customerName: string;
+  orderNumber: string;
+  amount: number;
+  currency: string;
+  invoicePdfBuffer: Buffer;
+}
+
+// 🧾 Email confirmation commande
+export async function sendOrderConfirmationEmail(
+  options: EmailOptions,
+): Promise<void> {
+  const {
+    to,
+    customerName,
+    orderNumber,
+    amount = 0,
+    currency,
+    invoicePdfBuffer,
+  } = options;
+
+  const safeAmount = Number(amount) || 0;
+
+  const htmlTemplate = `
+  <!DOCTYPE html>
+  <html>
+    <body style="font-family: Arial; background:#f5f5f5; padding:20px;">
+      <div style="max-width:600px;margin:auto;background:#fff;padding:30px;border-radius:8px;">
+        <h2 style="color:#007bff;">✅ Order Confirmation</h2>
+
+        <p>Hello <strong>${customerName}</strong>,</p>
+        <p>Your payment has been successfully processed.</p>
+
+        <div style="background:#f9f9f9;padding:15px;margin:20px 0;">
+          <p><strong>Order:</strong> #${orderNumber}</p>
+          <p><strong>Amount:</strong> ${safeAmount.toFixed(2)} ${currency}</p>
+        </div>
+
+        <p>Invoice attached.</p>
+
+        <p style="text-align:right;font-weight:bold;color:#007bff;">
+          Total: ${safeAmount.toFixed(2)} ${currency}
+        </p>
+
+        <p style="font-size:12px;color:#999;margin-top:30px;">
+          Williams Mobil
+        </p>
+      </div>
+    </body>
+  </html>
+  `;
+
+  try {
+    await transporter.sendMail({
+      from: `"Williams Mobil" <${process.env.SMTP_USER}>`,
+      to,
+      subject: `Order Confirmation #${orderNumber}`,
+      html: htmlTemplate,
+
+      attachments: invoicePdfBuffer
+        ? [
+            {
+              filename: `invoice-${orderNumber}.pdf`,
+              content: invoicePdfBuffer,
+              contentType: "application/pdf",
+            },
+          ]
+        : [],
+    });
+
+    console.log(`📧 Email confirmation envoyé → ${to}`);
+  } catch (error) {
+    console.error("❌ Erreur email confirmation:", error);
+    throw error;
+  }
+}
+
+// ❌ Email échec paiement
+export async function sendPaymentFailureEmail(
+  to: string,
+  customerName: string,
+  reason?: string,
+): Promise<void> {
+  try {
+    await transporter.sendMail({
+      from: `"Williams Mobil" <${process.env.SMTP_USER}>`,
+      to,
+      subject: "Paiement échoué",
+      html: `
+        <p>Bonjour <strong>${customerName}</strong>,</p>
+        <p>Votre paiement a échoué.</p>
+        <p><strong>Raison :</strong> ${
+          reason || "Veuillez contacter le support."
+        }</p>
+      `,
+    });
+
+    console.log(`📧 Email échec envoyé → ${to}`);
+  } catch (error) {
+    console.error("❌ Erreur email échec:", error);
+    throw error;
+  }
 }
