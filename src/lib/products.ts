@@ -567,7 +567,7 @@ export const products: Product[] = [
   {
     id: "caravane-imgc",
     title: "Weinsberg CaraOne 390 QD",
-    price: "2500 €",
+    price: "2700 €",
     image:
       "/images/caravane/imgc/WhatsApp Image 2026-05-16 at 01.41.32 (1).jpeg",
     gallery: [
