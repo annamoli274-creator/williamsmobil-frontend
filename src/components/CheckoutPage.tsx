@@ -908,15 +908,50 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
                       <h4 className="text-sm font-bold text-primary font-serif mb-2">
                         {text.bank}
                       </h4>
-                      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 text-sm text-zinc-900">
-                        <p className="leading-relaxed">
-                          {currentLang === "es"
-                            ? "Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp. Se le enviarán los datos de pago para que pueda realizar el pago y validar su pedido para su procesamiento y entrega."
-                            : currentLang === "en"
-                              ? "By finalizing and validating your order, you will be contacted by email or WhatsApp by an agent of our company. The payment details will then be sent to you so that you can make the payment and validate your order for processing and delivery."
-                              : "En finalisant et validant votre commande, vous serez contacté par e-mail ou par WhatsApp par un agent de notre entreprise. Les informations de paiement vous seront alors transmises afin que vous puissiez effectuer le règlement et valider votre commande pour son traitement et sa livraison."}
-                        </p>
-                      </div>
+                      {totalPrice > 5000 ? (
+                        /* Commande > 5000€ : acompte de 35% */
+                        <div className="rounded-2xl border border-amber-300/60 bg-amber-50/80 p-5 text-sm text-zinc-900 space-y-3">
+                          <div className="flex items-center gap-2 font-bold text-amber-700 mb-1">
+                            <span>⚠️</span>
+                            <span>
+                              {currentLang === "es"
+                                ? "Condiciones de pago — Pedido superior a 5 000 €"
+                                : currentLang === "en"
+                                  ? "Payment terms — Order above €5,000"
+                                  : "Conditions de paiement — Commande supérieure à 5 000 €"}
+                            </span>
+                          </div>
+                          <p className="leading-relaxed">
+                            {currentLang === "es"
+                              ? `Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp para organizar el pago de un anticipo del 35 % del importe total (${(totalPrice * 0.35).toFixed(2)} €). El saldo restante (${(totalPrice * 0.65).toFixed(2)} €) se abonará tras la entrega.`
+                              : currentLang === "en"
+                                ? `By finalizing and validating your order, an agent of our company will contact you by email or WhatsApp to arrange payment of a 35% deposit (${(totalPrice * 0.35).toFixed(2)} €). The remaining balance (${(totalPrice * 0.65).toFixed(2)} €) will be settled after delivery.`
+                                : `En finalisant et validant votre commande, un agent de notre entreprise vous contactera par e-mail ou par WhatsApp afin d'organiser le règlement d'un acompte de 35 % du montant total de votre commande, soit ${(totalPrice * 0.35).toFixed(2)} €. Le solde restant (${(totalPrice * 0.65).toFixed(2)} €) sera réglé après la livraison.`}
+                          </p>
+                          <div className="flex gap-4 pt-2 border-t border-amber-200 text-xs font-semibold text-amber-800">
+                            <span>
+                              {currentLang === "es" ? "Anticipo (35%) :" : currentLang === "en" ? "Deposit (35%) :" : "Acompte (35%) :"}
+                              {" "}€{(totalPrice * 0.35).toFixed(2)}
+                            </span>
+                            <span className="opacity-50">|</span>
+                            <span>
+                              {currentLang === "es" ? "Saldo tras entrega :" : currentLang === "en" ? "Balance after delivery :" : "Solde après livraison :"}
+                              {" "}€{(totalPrice * 0.65).toFixed(2)}
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        /* Commande ≤ 5000€ : règlement complet */
+                        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5 text-sm text-zinc-900">
+                          <p className="leading-relaxed">
+                            {currentLang === "es"
+                              ? "Al finalizar y validar su pedido, recibirá la información de pago por correo electrónico o será contactado por WhatsApp por un agente de nuestra empresa para efectuar el pago completo de su pedido y validar la entrega."
+                              : currentLang === "en"
+                                ? "By finalizing and validating your order, you will receive the payment details by email or be contacted via WhatsApp by an agent of our company to complete the full payment of your order and confirm delivery."
+                                : "En finalisant et validant votre commande, vous recevrez les informations de paiement par e-mail ou serez contacté par WhatsApp par un agent de notre entreprise afin d'effectuer le règlement complet de votre commande et valider la livraison."}
+                          </p>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
