@@ -339,8 +339,17 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
       });
 
       if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || "Failed to place order");
+        let errorMsg = "Failed to place order";
+        try {
+          const errorData = await res.json();
+          errorMsg = errorData.error || errorMsg;
+        } catch (_) {
+          try {
+            const textMsg = await res.text();
+            if (textMsg) errorMsg = textMsg.slice(0, 100);
+          } catch (_) {}
+        }
+        throw new Error(errorMsg);
       }
 
       // After successful order, send proof to WhatsApp if applicable
@@ -364,12 +373,13 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
       setItems([]);
     } catch (error: any) {
       console.error("Error placing order:", error);
+      const detail = error?.message || "";
       setErrorMessage(
         currentLang === "es"
-          ? "Error al procesar el pedido. Por favor, inténtelo de nouveau."
+          ? `Error al procesar el pedido. Detalle: ${detail || "Por favor, inténtelo de nuevo."}`
           : currentLang === "en"
-            ? "Failed to process order. Please try again."
-            : "Échec du traitement de la commande. Veuillez réessayer.",
+            ? `Failed to process order. Detail: ${detail || "Please try again."}`
+            : `Échec du traitement de la commande. Détail : ${detail || "Veuillez réessayer."}`,
       );
     } finally {
       setIsSubmitting(false);
