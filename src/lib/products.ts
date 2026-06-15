@@ -1029,7 +1029,7 @@ export const products: Product[] = [
     title: "SUNLIGHT T 60 D'OCCASION",
     price: "11000 €",
     image:
-      "/images/caravane/imgm/WhatsApp Image 2026-05-16 at 06.45.49 (3).jpeg",
+      "/images/caravane/imgm/WhatsApp Image 2026-05-16 at 06.46.07.jpeg",
     gallery: [
       "/images/caravane/imgm/WhatsApp Image 2026-05-16 at 06.45.49 (3).jpeg",
       "/images/caravane/imgm/WhatsApp Image 2026-05-16 at 06.46.07.jpeg",
@@ -1820,7 +1820,7 @@ export const products: Product[] = [
   {
     id: "mobile-home-imgj",
     title: "Mobil-home Exclusive - Villa Impériale",
-    price: "112700 €",
+    price: " 11270 €",
     oldPrice: "122500 €",
     discount: "8%",
     image:
