@@ -259,7 +259,7 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                   )}
                 </button>
                 </form>
-                </>
+                </> 
             )}
           </div>
         </div>
