@@ -23,12 +23,15 @@ const ContactClient = ({ dict }: ContactClientProps) => {
       const email = (formData.get("email") ?? "").toString();
       const subject = (formData.get("subject") ?? "Demande depuis le site").toString();
       const message = (formData.get("message") ?? "").toString();
+      const phonePrefix = (formData.get("phone_prefix") ?? "+34").toString();
+      const phoneNumber = (formData.get("phone_number") ?? "").toString();
+      const phone = `${phonePrefix}${phoneNumber}`;
 
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL || "http://localhost:5001";
       const res = await fetch(`${backendUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, phone, subject, message }),
       });
 
       if (!res.ok) {
@@ -198,7 +201,7 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                       Phone
                     </label>
                     <div className="flex gap-2">
-                      <select className="w-1/4 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900">
+                      <select name="phone_prefix" className="w-1/4 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900">
                         <option value="+34">+34</option>
                         <option value="+31">+31</option>
                         <option value="+49">+49</option>
@@ -206,6 +209,7 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                         <option value="+32">+32</option>
                       </select>
                       <input
+                        name="phone_number"
                         type="tel"
                         className="flex-1 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900"
                         placeholder="610 70 69 19"
