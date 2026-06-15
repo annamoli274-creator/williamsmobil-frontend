@@ -221,13 +221,13 @@
   "page_content": {
     "concept": {
       "intro": "Our approach combines design, mobility and sustainability to offer premium modular homes capable of being installed anywhere.",
-      "paragraph1": "Williams Mobil develops housing solutions that respect environmental standards while offering modern comfort. Each model is designed to be lightweight, easy to transport and simple to assemble.",
+      "paragraph1": "Williams Mobilhome develops housing solutions that respect environmental standards while offering modern comfort. Each model is designed to be lightweight, easy to transport and simple to assemble.",
       "paragraph2": "Our mobile homes and modular units are designed for residential, leisure or mobile work uses. The concept is based on intelligent construction, quality materials and premium finishing.",
       "card1_title": "Modular Design",
       "card1_desc": "Optimized spaces, flexible layout and premium finishes that adapt to your needs.",
       "card2_title": "Controlled Mobility",
       "card2_desc": "Structures designed for road transport, quick assembly and on-site installation without compromising on comfort.",
-      "why_title": "Why choose Williams Mobil?",
+      "why_title": "Why choose Williams Mobilhome?",
       "why1": "Mobile and sustainable habitat, compatible with modern lifestyles.",
       "why2": "Quality materials for enhanced durability.",
       "why3": "Personalized support at every step, from model selection to delivery."
@@ -240,7 +240,7 @@
       "isolation_p1": "Thermal and acoustic insulation is optimized to maintain a comfortable temperature in all seasons and reduce external noise.",
       "isolation_p2": "Our solutions include high-efficiency heating, ventilation and lighting systems.",
       "finish_title": "Finishing & Maintenance",
-      "finish_desc": "Each mobile home is delivered with careful finishes, resistant coatings and equipment that is easy to maintain for long-lasting and hassle-free use."
+      "finish_desc": "Each mobilhome is delivered with careful finishes, resistant coatings and equipment that is easy to maintain for long-lasting and hassle-free use."
     },
     "faq": {
       "intro": "Find answers to the most common questions about our modular homes, delivery and purchase terms.",
@@ -273,7 +273,7 @@
       "cancel_title": "Cancellation and Returns",
       "cancel_desc": "Any cancellation must be requested promptly. Depending on production progress, fees may apply.",
       "liability_title": "Liability",
-      "liability_desc": "Williams Mobil commits to providing conforming products. Liability is limited to obligations provided by consumer law and applicable regulations."
+      "liability_desc": "Williams Mobilhome commits to providing conforming products. Liability is limited to obligations provided by consumer law and applicable regulations."
     },
     "cookies": {
       "intro": "We use cookies to improve your navigation, analyze site performance and personalize your experience.",
@@ -298,7 +298,7 @@
     "all": "All",
     "conteneur": "Container",
     "caravane": "Caravan",
-    "mobile-home": "Mobile Home",
+    "mobile-home": "MobilHome",
     "remorque": "Trailer"
   }
 }
