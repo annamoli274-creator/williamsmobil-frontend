@@ -381,14 +381,15 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
   }
 }
 
-setIsOrdered(true);
-setItems([]);
+      setIsOrdered(true);
+      setItems([]);
       // Nettoyage des cookies du panier après la réussite de la commande
       document.cookie = `cart_items=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
       document.cookie = `cart_token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
-      // Rafraîchir la page en arrière‑plan pour refléter le panier vidé
-      router.refresh();
+      // Notifier les composants (Navbar) que le panier a été vidé
       window.dispatchEvent(new Event("cartUpdated"));
+      // Rafraîchir la page en arrière‑plan pour refléter le panier vidé
+      // router.refresh(); // Désactivé, la mise à jour du panier se fait via l'événement cartUpdated
     } catch (error: any) {
       console.error("Error placing order:", error);
       const detail = error?.message || "";
