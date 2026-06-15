@@ -1474,7 +1474,7 @@ export const products: Product[] = [
     oldPrice: "14950 €",
     discount: "8%",
     image:
-      "/images/mobilehome/imga/WhatsApp Image 2026-05-18 at 16.27.24 (1).jpeg",
+      "/images/mobilehome/imga/WhatsApp Image 2026-05-18 at 16.27.24.jpeg",
     gallery: [
       "/images/mobilehome/imga/WhatsApp Image 2026-05-18 at 16.27.24 (1).jpeg",
       "/images/mobilehome/imga/WhatsApp Image 2026-05-18 at 16.27.24 (2).jpeg",
@@ -1518,7 +1518,7 @@ export const products: Product[] = [
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.46 (1).jpeg",
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.46 (2).jpeg",
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.46 (3).jpeg",
-      "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.46.jpeg",
+      
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.47 (1).jpeg",
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.47 (2).jpeg",
       "/images/mobilehome/imgb/WhatsApp Image 2026-05-18 at 16.27.47 (3).jpeg",
@@ -1588,7 +1588,7 @@ export const products: Product[] = [
     oldPrice: "32950 €",
     discount: "8%",
     image:
-      "/images/mobilehome/imgd/WhatsApp Image 2026-05-18 at 16.30.06 (1).jpeg",
+      "/images/mobilehome/imgd/WhatsApp Image 2026-05-18 at 16.30.06.jpeg",
     gallery: [
       "/images/mobilehome/imgd/WhatsApp Image 2026-05-18 at 16.30.06 (1).jpeg",
       "/images/mobilehome/imgd/WhatsApp Image 2026-05-18 at 16.30.06 (2).jpeg",
@@ -1671,7 +1671,7 @@ export const products: Product[] = [
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.58 (1).jpeg",
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.58 (2).jpeg",
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.58 (3).jpeg",
-      "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.58.jpeg",
+      
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.59 (1).jpeg",
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.59 (2).jpeg",
       "/images/mobilehome/imgf/WhatsApp Image 2026-05-18 at 16.30.59 (3).jpeg",
@@ -1706,7 +1706,7 @@ export const products: Product[] = [
     oldPrice: "19000 €",
     discount: "8%",
     image:
-      "/images/mobilehome/imgg/WhatsApp Image 2026-05-18 at 16.31.29 (1).jpeg",
+      "/images/mobilehome/imgg/WhatsApp Image 2026-05-18 at 16.31.29.jpeg",
     gallery: [
       "/images/mobilehome/imgg/WhatsApp Image 2026-05-18 at 16.31.29 (1).jpeg",
       "/images/mobilehome/imgg/WhatsApp Image 2026-05-18 at 16.31.29 (2).jpeg",
@@ -1748,7 +1748,7 @@ export const products: Product[] = [
     gallery: [
       "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.37 (1).jpeg",
       "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.37 (2).jpeg",
-      "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.37.jpeg",
+      
       "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.38 (1).jpeg",
       "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.38 (2).jpeg",
       "/images/mobilehome/imgh/WhatsApp Image 2026-05-18 at 16.32.38 (3).jpeg",
@@ -1787,7 +1787,7 @@ export const products: Product[] = [
     gallery: [
       "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.37 (1).jpeg",
       "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.37 (2).jpeg",
-      "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.37.jpeg",
+     
       "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.38 (1).jpeg",
       "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.38 (2).jpeg",
       "/images/mobilehome/imgi/WhatsApp Image 2026-05-18 at 16.34.38 (3).jpeg",
@@ -1824,7 +1824,7 @@ export const products: Product[] = [
     oldPrice: "122500 €",
     discount: "8%",
     image:
-      "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.30 (1).jpeg",
+      "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.31 (1).jpeg",
     gallery: [
       "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.30 (1).jpeg",
       "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.30 (2).jpeg",
@@ -1833,7 +1833,7 @@ export const products: Product[] = [
       "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.31 (2).jpeg",
       "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.31 (3).jpeg",
       "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.31 (4).jpeg",
-      "/images/mobilehome/imgj/WhatsApp Image 2026-05-18 at 16.35.31.jpeg",
+      
     ],
     description:
       "Le fleuron de notre gamme de mobil-homes. Une conception sur-mesure d'exception offrant un salon immense, deux salles de bains privatives et une autonomie énergétique remarquable.",
