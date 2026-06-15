@@ -220,13 +220,13 @@
   "page_content": {
     "concept": {
       "intro": "Notre approche combine design, mobilité et durabilité pour proposer des habitats modulaires premium capables de s'installer partout.",
-      "paragraph1": "Williams Mobil développe des solutions de logement qui respectent les normes environnementales tout en offrant un confort moderne. Chaque modèle est conçu pour être léger, facile à transporter et simple à assembler.",
-      "paragraph2": "Nos mobil-homes et unités modulaires sont pensés pour des usages résidentiels, de loisirs ou de travail mobile. Le concept repose sur une construction intelligente, des matériaux de qualité et une finition premium.",
+      "paragraph1": "Williams Mobilhome développe des solutions de logement qui respectent les normes environnementales tout en offrant un confort moderne. Chaque modèle est conçu pour être léger, facile à transporter et simple à assembler.",
+      "paragraph2": "Nos mobilhomes et unités modulaires sont pensés pour des usages résidentiels, de loisirs ou de travail mobile. Le concept repose sur une construction intelligente, des matériaux de qualité et une finition premium.",
       "card1_title": "Design modulable",
       "card1_desc": "Des espaces optimisés, un aménagement flexible et des finitions haut de gamme qui s'adaptent à vos usages.",
       "card2_title": "Mobilité maîtrisée",
       "card2_desc": "Des structures étudiées pour le transport routier, le montage rapide et l'installation sur site sans compromis sur le confort.",
-      "why_title": "Pourquoi choisir Williams Mobil ?",
+      "why_title": "Pourquoi choisir Williams Mobilhome ?",
       "why1": "Habitat mobile et durable, compatible avec des modes de vie modernes.",
       "why2": "Matériaux de qualité pour une longévité renforcée.",
       "why3": "Soutien personnalisé à chaque étape, de la sélection du modèle à la livraison."
@@ -239,7 +239,7 @@
       "isolation_p1": "L'isolation thermique et acoustique est optimisée pour maintenir une température agréable en toutes saisons et réduire les nuisances extérieures.",
       "isolation_p2": "Nos solutions intègrent des systèmes de chauffage, de ventilation et d'éclairage à haut rendement énergétique.",
       "finish_title": "Finition & entretien",
-      "finish_desc": "Chaque mobile-home est livré avec des finitions soignées, des revêtements résistants et des équipements faciles à entretenir pour une utilisation durable et sereine."
+      "finish_desc": "Chaque mobilhome est livré avec des finitions soignées, des revêtements résistants et des équipements faciles à entretenir pour une utilisation durable et sereine."
     },
     "faq": {
       "intro": "Retrouvez les réponses aux questions les plus courantes sur nos habitats modulaires, la livraison et les conditions d'achat.",
@@ -272,7 +272,7 @@
       "cancel_title": "Annulation et retour",
       "cancel_desc": "Toute annulation doit être demandée rapidement. En fonction de l'état d'avancement de la production, des frais peuvent s'appliquer.",
       "liability_title": "Responsabilité",
-      "liability_desc": "Williams Mobil s'engage à fournir des produits conformes. La responsabilité reste limitée aux obligations prévues par le droit de la consommation et la réglementation applicable."
+      "liability_desc": "Williams Mobilhome s'engage à fournir des produits conformes. La responsabilité reste limitée aux obligations prévues par le droit de la consommation et la réglementation applicable."
     },
     "cookies": {
       "intro": "Nous utilisons des cookies pour améliorer votre navigation, analyser les performances du site et personnaliser votre expérience.",
@@ -297,7 +297,7 @@
     "all": "Tous",
     "conteneur": "Conteneur",
     "caravane": "Caravane",
-    "mobile-home": "Mobile Home",
+    "mobile-home": "MobilHome",
     "remorque": "Remorque"
   },
   "mailto_hint": "Si votre client mail ne s'ouvre pas, contactez-nous à"
