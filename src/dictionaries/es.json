@@ -221,13 +221,13 @@
   "page_content": {
     "concept": {
       "intro": "Nuestro enfoque combina diseño, movilidad y sostenibilidad para ofrecer hogares modulares premium capaces de instalarse en cualquier lugar.",
-      "paragraph1": "Williams Mobil desarrolla soluciones de vivienda que respetan los estándares ambientales mientras ofrecen comodidad moderna. Cada modelo está diseñado para ser ligero, fácil de transportar y simple de montar.",
+      "paragraph1": "Williams Mobilhome desarrolla soluciones de vivienda que respetan los estándares ambientales mientras ofrecen comodidad moderna. Cada modelo está diseñado para ser ligero, fácil de transportar y simple de montar.",
       "paragraph2": "Nuestros hogares móviles y unidades modulares están diseñados para usos residenciales, ocio o trabajo móvil. El concepto se basa en construcción inteligente, materiales de calidad y acabados premium.",
       "card1_title": "Diseño Modular",
       "card1_desc": "Espacios optimizados, distribución flexible y acabados premium que se adaptan a tus necesidades.",
       "card2_title": "Movilidad Controlada",
       "card2_desc": "Estructuras diseñadas para transporte por carretera, montaje rápido e instalación en sitio sin comprometer el confort.",
-      "why_title": "¿Por qué elegir Williams Mobil?",
+      "why_title": "¿Por qué elegir Williams Mobilhome?",
       "why1": "Vivienda móvil y sostenible, compatible con estilos de vida modernos.",
       "why2": "Materiales de calidad para mayor durabilidad.",
       "why3": "Apoyo personalizado en cada paso, desde la selección del modelo hasta la entrega."
@@ -240,7 +240,7 @@
       "isolation_p1": "El aislamiento térmico y acústico se optimiza para mantener una temperatura cómoda en todas las estaciones y reducir el ruido externo.",
       "isolation_p2": "Nuestras soluciones incluyen sistemas de calefacción, ventilación e iluminación de alta eficiencia.",
       "finish_title": "Acabado y Mantenimiento",
-      "finish_desc": "Cada hogar móvil se entrega con acabados cuidadosos, revestimientos resistentes y equipos fáciles de mantener para un uso duradero y sin problemas."
+      "finish_desc": "Cada hogar móvilhome se entrega con acabados cuidadosos, revestimientos resistentes y equipos fáciles de mantener para un uso duradero y sin problemas."
     },
     "faq": {
       "intro": "Encuentra respuestas a las preguntas más frecuentes sobre nuestros hogares modulares, entrega y condiciones de compra.",
@@ -273,7 +273,7 @@
       "cancel_title": "Cancelación y Devoluciones",
       "cancel_desc": "Toda cancelación debe solicitarse rápidamente. Dependiendo del avance de la producción, pueden aplicarse cargos.",
       "liability_title": "Responsabilidad",
-      "liability_desc": "Williams Mobil se compromete a proporcionar productos conformes. La responsabilidad se limita a las obligaciones previstas por la ley del consumidor y la normativa aplicable."
+      "liability_desc": "Williams Mobilhome se compromete a proporcionar productos conformes. La responsabilidad se limita a las obligaciones previstas por la ley del consumidor y la normativa aplicable."
     },
     "cookies": {
       "intro": "Utilizamos cookies para mejorar tu navegación, analizar el rendimiento del sitio y personalizar tu experiencia.",
@@ -298,7 +298,7 @@
     "all": "Todos",
     "conteneur": "Contenedor",
     "caravane": "Caravana",
-    "mobile-home": "Casa móvil",
+    "mobile-home": "Casa móvilhome",
     "remorque": "Remolque"
   }
 }
