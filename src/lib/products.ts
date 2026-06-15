@@ -49,7 +49,7 @@ export const products: Product[] = [
       "Maison conteneur de 6 mètres, rouge bordeaux, avec salle de bain et cuisine",
     price: "3490 €",
     image:
-      "/images/conteneur/imgb/WhatsApp Image 2026-05-15 at 11.39.18 (3).jpeg",
+     "/images/conteneur/imgb/WhatsApp Image 2026-05-15 at 11.39.29 (1).jpeg",
     gallery: [
       "/images/conteneur/imgb/WhatsApp Image 2026-05-15 at 11.39.18 (3).jpeg",
       "/images/conteneur/imgb/WhatsApp Image 2026-05-15 at 11.39.29 (1).jpeg",
