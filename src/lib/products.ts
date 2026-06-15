@@ -119,7 +119,7 @@ export const products: Product[] = [
     gallery: [
       "/images/conteneur/imgd/WhatsApp Image 2026-05-15 at 11.39.04 (1).jpeg",
       "/images/conteneur/imgd/WhatsApp Image 2026-05-15 at 11.39.04 (2).jpeg",
-      "/images/conteneur/imgd/WhatsApp Image 2026-05-15 at 11.39.04.jpeg",
+      
       "/images/conteneur/imgd/WhatsApp Image 2026-05-15 at 11.39.05.jpeg",
       "/images/conteneur/imgd/WhatsApp Image 2026-05-15 at 11.39.08 (1).jpeg",
       "/images/conteneur/imgd/WhatsApp Image 2026-05-15 at 11.39.08.jpeg",
@@ -150,7 +150,7 @@ export const products: Product[] = [
       "/images/conteneur/imge/WhatsApp Image 2026-05-15 at 11.27.24 (1).jpeg",
     gallery: [
       "/images/conteneur/imge/WhatsApp Image 2026-05-15 at 11.27.24 (1).jpeg",
-      "/images/conteneur/imge/WhatsApp Image 2026-05-15 at 11.27.24 (2).jpeg",
+      
       "/images/conteneur/imge/WhatsApp Image 2026-05-15 at 11.27.24.jpeg",
       "/images/conteneur/imge/WhatsApp Image 2026-05-15 at 11.27.25 (1).jpeg",
       "/images/conteneur/imge/WhatsApp Image 2026-05-15 at 11.27.25 (2).jpeg",
@@ -182,7 +182,7 @@ export const products: Product[] = [
       "/images/conteneur/imgf/WhatsApp Image 2026-05-15 at 11.27.34 (1).jpeg",
     gallery: [
       "/images/conteneur/imgf/WhatsApp Image 2026-05-15 at 11.27.34 (1).jpeg",
-      "/images/conteneur/imgf/WhatsApp Image 2026-05-15 at 11.27.34.jpeg",
+     
       "/images/conteneur/imgf/WhatsApp Image 2026-05-15 at 11.27.36.jpeg",
       "/images/conteneur/imgf/WhatsApp Image 2026-05-15 at 11.27.37 (1).jpeg",
       "/images/conteneur/imgf/WhatsApp Image 2026-05-15 at 11.27.37.jpeg",
@@ -214,7 +214,7 @@ export const products: Product[] = [
     image:
       "/images/conteneur/imgg/WhatsApp Image 2026-05-15 at 11.27.56 (1).jpeg",
     gallery: [
-      "/images/conteneur/imgg/WhatsApp Image 2026-05-15 at 11.27.47 (7).jpeg",
+      
       "/images/conteneur/imgg/WhatsApp Image 2026-05-15 at 11.27.48.jpeg",
       "/images/conteneur/imgg/WhatsApp Image 2026-05-15 at 11.27.50.jpeg",
       "/images/conteneur/imgg/WhatsApp Image 2026-05-15 at 11.27.56 (1).jpeg",
@@ -246,7 +246,7 @@ export const products: Product[] = [
       "/images/conteneur/imgh/WhatsApp Image 2026-05-15 at 11.28.00 (1).jpeg",
     gallery: [
       "/images/conteneur/imgh/WhatsApp Image 2026-05-15 at 11.28.00 (1).jpeg",
-      "/images/conteneur/imgh/WhatsApp Image 2026-05-15 at 11.28.00.jpeg",
+      
       "/images/conteneur/imgh/WhatsApp Image 2026-05-15 at 11.28.06 (1).jpeg",
       "/images/conteneur/imgh/WhatsApp Image 2026-05-15 at 11.28.06 (2).jpeg",
       "/images/conteneur/imgh/WhatsApp Image 2026-05-15 at 11.28.06 (3).jpeg",
@@ -341,7 +341,7 @@ export const products: Product[] = [
       "/images/conteneur/imgl/WhatsApp Image 2026-05-15 at 11.29.40 (1).jpeg",
     gallery: [
       "/images/conteneur/imgl/WhatsApp Image 2026-05-15 at 11.29.40 (1).jpeg",
-      "/images/conteneur/imgl/WhatsApp Image 2026-05-15 at 11.29.40.jpeg",
+      
       "/images/conteneur/imgl/WhatsApp Image 2026-05-15 at 11.29.41.jpeg",
       "/images/conteneur/imgl/WhatsApp Image 2026-05-15 at 11.29.42 (1).jpeg",
       "/images/conteneur/imgl/WhatsApp Image 2026-05-15 at 11.29.42.jpeg",
@@ -406,7 +406,7 @@ export const products: Product[] = [
     gallery: [
       "/images/conteneur/imgn/WhatsApp Image 2026-05-15 at 11.29.48 (1).jpeg",
       "/images/conteneur/imgn/WhatsApp Image 2026-05-15 at 11.29.48 (2).jpeg",
-      "/images/conteneur/imgn/WhatsApp Image 2026-05-15 at 11.29.48.jpeg",
+      
       "/images/conteneur/imgn/WhatsApp Image 2026-05-15 at 11.29.49 (1).jpeg",
       "/images/conteneur/imgn/WhatsApp Image 2026-05-15 at 11.29.49.jpeg",
     ],
@@ -437,7 +437,7 @@ export const products: Product[] = [
     gallery: [
       "/images/conteneur/imgo/WhatsApp Image 2026-05-15 at 11.37.49 (1).jpeg",
       "/images/conteneur/imgo/WhatsApp Image 2026-05-15 at 11.37.49 (2).jpeg",
-      "/images/conteneur/imgo/WhatsApp Image 2026-05-15 at 11.37.49.jpeg",
+      
       "/images/conteneur/imgo/WhatsApp Image 2026-05-15 at 11.37.50.jpeg",
     ],
     description:
