@@ -338,39 +338,48 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
         body: formData,
       });
 
-      if (!res.ok) {
-        let errorMsg = "Failed to place order";
-        try {
-          const errorData = await res.json();
-          errorMsg = errorData.error || errorMsg;
-        } catch (_) {
-          try {
-            const textMsg = await res.text();
-            if (textMsg) errorMsg = textMsg.slice(0, 100);
-          } catch (_) {}
-        }
-        throw new Error(errorMsg);
-      }
+if (!res.ok) {
+  let errorMsg = "Failed to place order";
+  try {
+    const errorData = await res.json();
+    errorMsg = errorData.error || errorMsg;
+  } catch (_) {
+    try {
+      const textMsg = await res.text();
+      if (textMsg) errorMsg = textMsg.slice(0, 100);
+    } catch (_) {}
+  }
+  throw new Error(errorMsg);
+}
 
-      // After successful order, send proof to WhatsApp if applicable
-      if (selectedPaymentMethod === "virement" && paymentProofFile) {
-        try {
-          const whatsappForm = new FormData();
-          whatsappForm.append("file", paymentProofFile);
-          whatsappForm.append("fullName", deliveryForm.fullName);
-          whatsappForm.append("email", deliveryForm.email);
-          whatsappForm.append("total", totalPrice.toString());
-          whatsappForm.append("paymentMethod", selectedPaymentMethod);
-          await fetch("/api/whatsapp-proof", {
-            method: "POST",
-            body: whatsappForm,
-          });
-        } catch (whErr) {
-          console.error("WhatsApp proof error", whErr);
-        }
-      }
-      setIsOrdered(true);
-      setItems([]);
+// ✅ Nettoyage panier (protégé)
+try {
+  await clearCartApi();
+} catch (err) {
+  console.error("Erreur clearCartApi", err);
+}
+
+// After successful order, send proof to WhatsApp if applicable
+if (selectedPaymentMethod === "virement" && paymentProofFile) {
+  try {
+    const whatsappForm = new FormData();
+    whatsappForm.append("file", paymentProofFile);
+    whatsappForm.append("fullName", deliveryForm.fullName);
+    whatsappForm.append("email", deliveryForm.email);
+    whatsappForm.append("total", totalPrice.toString());
+    whatsappForm.append("paymentMethod", selectedPaymentMethod);
+
+    await fetch("/api/whatsapp-proof", {
+      method: "POST",
+      body: whatsappForm,
+    });
+  } catch (whErr) {
+    console.error("WhatsApp proof error", whErr);
+  }
+}
+
+setIsOrdered(true);
+setItems([]);
     } catch (error: any) {
       console.error("Error placing order:", error);
       const detail = error?.message || "";
