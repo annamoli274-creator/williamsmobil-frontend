@@ -112,9 +112,13 @@ export const clearCart = async (): Promise<boolean> => {
       method: "DELETE",
       credentials: "same-origin",
     });
+    // Nettoyer le cookie du panier quel que soit le résultat du serveur
+    document.cookie = `cart_items=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
     return res.ok;
   } catch (error) {
     console.warn("Erreur lors de la suppression du panier", error);
+    // Nettoyer le cookie en cas d'erreur de requête
+    document.cookie = `cart_items=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
     return false;
   }
 };
