@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CreditCard,
@@ -292,6 +293,8 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
   const clearCart = async () => {
     await clearCartApi();
     setItems([]);
+    // Nettoyage du cookie du panier après appel API
+    document.cookie = `cart_items=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
   };
 
   const handleDeleteItem = async (itemId: string) => {
@@ -338,7 +341,7 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
         body: formData,
       });
 
-if (!res.ok) {
+      if (!res.ok) {
   let errorMsg = "Failed to place order";
   try {
     const errorData = await res.json();
@@ -380,6 +383,12 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
 
 setIsOrdered(true);
 setItems([]);
+      // Nettoyage des cookies du panier après la réussite de la commande
+      document.cookie = `cart_items=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+      document.cookie = `cart_token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+      // Rafraîchir la page en arrière‑plan pour refléter le panier vidé
+      router.refresh();
+      window.dispatchEvent(new Event("cartUpdated"));
     } catch (error: any) {
       console.error("Error placing order:", error);
       const detail = error?.message || "";
