@@ -45,7 +45,7 @@ export default async function ConceptPage(props: {
 
         <section className="space-y-6 text-zinc-700">
           <h2 className="text-3xl font-semibold">
-            {content?.why_title || "Pourquoi choisir Williams Mobil ?"}
+            {content?.why_title || "Pourquoi choisir Williams MobilHome ?"}
           </h2>
           <div className="grid gap-4 md:grid-cols-3">
             {[content?.why1, content?.why2, content?.why3].map(
