@@ -67,7 +67,7 @@ const ProductNotification = ({ dict }: ProductNotificationProps) => {
 
       setTimeout(() => {
         setIsVisible(false);
-      }, 6000);
+      }, 9000);
     };
 
     const initialTimer = setTimeout(showRandomNotification, 8000);
