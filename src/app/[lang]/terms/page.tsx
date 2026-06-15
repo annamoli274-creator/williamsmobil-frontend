@@ -28,7 +28,7 @@ export default async function TermsPage(props: {
       title: content?.liability_title || "Responsabilité",
       description:
         content?.liability_desc ||
-        "Williams Mobil s’engage à fournir des produits conformes. La responsabilité reste limitée aux obligations prévues par le droit de la consommation et la réglementation applicable.",
+        "Williams Mobilhome s’engage à fournir des produits conformes. La responsabilité reste limitée aux obligations prévues par le droit de la consommation et la réglementation applicable.",
     },
   ];
 
