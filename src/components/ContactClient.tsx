@@ -200,14 +200,17 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                     <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
                       Phone
                     </label>
-        <div className="flex gap-2">
-                      <select className="w-auto min-w-[100px] bg-white border border-zinc-300 rounded-xl px-5 py-3 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base font-medium appearance-none cursor-pointer">
-                        <option value="+34">+34</option>
-                        <option value="+31">+31</option>
-                        <option value="+49">+49</option>
-                        <option value="+33">+33</option>
-                        <option value="+32">+32</option>
-                      </select>
+ <div className="flex gap-2 items-center">
+                      <div className="relative min-w-[120px]">
+                        <select className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-3 pr-10 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base font-medium appearance-none cursor-pointer">
+                          <option value="+34">+34</option>
+                          <option value="+31">+31</option>
+                          <option value="+49">+49</option>
+                          <option value="+33">+33</option>
+                          <option value="+32">+32</option>
+                        </select>
+                        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+                      </div>
                       <input
                         type="tel"
                         className="flex-1 bg-white border border-zinc-300 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base"
