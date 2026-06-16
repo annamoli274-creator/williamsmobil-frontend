@@ -952,20 +952,20 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
                           </div>
                           <p className="leading-relaxed">
                             {currentLang === "es"
-                              ? `Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp para organizar el pago de un anticipo del 50 % del importe total (${(totalPrice * 0.50).toFixed(2)} €). El saldo restante (${(totalPrice * 0.65).toFixed(2)} €) se abonará tras la entrega.`
+                              ? `Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp para organizar el pago de un anticipo del 50 % del importe total (${(totalPrice * 0.5).toFixed(2)} €). El saldo restante (${(totalPrice * 0.5).toFixed(2)} €) se abonará tras la entrega.`
                               : currentLang === "en"
-                                ? `By finalizing and validating your order, an agent of our company will contact you by email or WhatsApp to arrange payment of a 50% deposit (${(totalPrice * 0.50).toFixed(2)} €). The remaining balance (${(totalPrice * 0.65).toFixed(2)} €) will be settled after delivery.`
-                                : `En finalisant et validant votre commande, un agent de notre entreprise vous contactera par e-mail ou par WhatsApp afin d'organiser le règlement d'un acompte de 50 % du montant total de votre commande, soit ${(totalPrice * 0.50).toFixed(2)} €. Le solde restant (${(totalPrice * 0.65).toFixed(2)} €) sera réglé après la livraison.`}
+                                ? `By finalizing and validating your order, an agent of our company will contact you by email or WhatsApp to arrange payment of a 50% deposit (${(totalPrice * 0.5).toFixed(2)} €). The remaining balance (${(totalPrice * 0.5).toFixed(2)} €) will be settled after delivery.`
+                                : `En finalisant et validant votre commande, un agent de notre entreprise vous contactera par e-mail ou par WhatsApp afin d'organiser le règlement d'un acompte de 50 % du montant total de votre commande, soit ${(totalPrice * 0.5).toFixed(2)} €. Le solde restant (${(totalPrice * 0.5).toFixed(2)} €) sera réglé après la livraison.`}
                           </p>
                           <div className="flex gap-4 pt-2 border-t border-amber-200 text-xs font-semibold text-amber-800">
                             <span>
                               {currentLang === "es" ? "Anticipo (50%) :" : currentLang === "en" ? "Deposit (50%) :" : "Acompte (50%) :"}
-                              {" "}€{(totalPrice * 0.50).toFixed(2)}
+                              {" "}€{(totalPrice * 0.5).toFixed(2)}
                             </span>
                             <span className="opacity-50">|</span>
                             <span>
                               {currentLang === "es" ? "Saldo tras entrega :" : currentLang === "en" ? "Balance after delivery :" : "Solde après livraison :"}
-                              {" "}€{(totalPrice * 0.65).toFixed(2)}
+                              {" "}€{(totalPrice * 0.5).toFixed(2)}
                             </span>
                           </div>
                         </div>
@@ -984,7 +984,6 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
                     </motion.div>
                   )}
                 </AnimatePresence>
-
                 <div className="flex gap-4 pt-4">
                   <button
                     onClick={() => setStep(2)}
