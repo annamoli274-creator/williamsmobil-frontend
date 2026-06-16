@@ -155,7 +155,7 @@
     "payment": "Paiement",
     "confirmation": "Confirmation",
     "order_confirmed": "COMMANDE VALIDÉE !",
-    "order_received": "Votre demande de réservation pour votre maison mobile a été reçue. Notre équipe vérifiera votre preuve de paiement sous 24h.",
+    "order_received": "Votre commande a bien été reçue avec succès. Notre équipe traite actuellement votre demande. Vous serez contacté sous 24 heures afin de finaliser votre commande et permettre la livraison de votre commande.",
     "back_home": "Retour à l'Accueil",
     "empty_cart_title": "VOTRE PANIER EST VIDE",
     "empty_cart_description": "Découvrez nos modèles exclusifs pour commencer votre aventure.",
