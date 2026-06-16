@@ -201,7 +201,7 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                       Phone
                     </label>
                     <div className="flex gap-2">
-                      <select name="phone_prefix" className="w-1/4 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900">
+                      <select name="phone_prefix" className="w-4/4 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900">
                         <option value="+34">+34</option>
                         <option value="+31">+31</option>
                         <option value="+49">+49</option>
