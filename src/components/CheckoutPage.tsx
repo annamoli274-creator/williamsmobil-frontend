@@ -71,7 +71,7 @@ const checkoutTexts = {
     emptyCart: "VOTRE PANIER EST VIDE",
     orderConfirmed: "COMMANDE VALIDÉE !",
     orderReceived:
-      "Votre demande de réservation pour votre maison mobile a été reçue. Notre équipe vérifiera votre preuve de paiement sous 24h.",
+      "Votre commande a bien été reçue avec succès. Notre équipe traite actuellement votre demande. Vous serez contacté sous 24 heures afin de finaliser votre commande et permettre la livraison de votre commande.",
     backHome: "Retour à l'Accueil",
     exploreCatalog: "Explorer le Catalogue",
     errorRequired: "Des champs obligatoires n'ont pas été remplis",
