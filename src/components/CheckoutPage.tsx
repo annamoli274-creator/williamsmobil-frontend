@@ -233,7 +233,7 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
 
   // Delivery Form State (with email)
   const [deliveryForm, setDeliveryForm] = useState<DeliveryForm>({
-    fullName: "Juan García",
+    fullName: "",
     address: "",
     city: "",
     postalCode: "",
