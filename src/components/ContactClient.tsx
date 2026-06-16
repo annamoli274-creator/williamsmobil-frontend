@@ -200,19 +200,17 @@ const ContactClient = ({ dict }: ContactClientProps) => {
                     <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
                       Phone
                     </label>
-                  <div className="flex gap-2">
- <select className="w-fit min-w-[80px] bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900">
-  <option value="+34">+34</option>
-  <option value="+31">+31</option>
-  <option value="+49">+49</option>
-  <option value="+33">+33</option>
-  <option value="+32">+32</option>
-</select>
-</div>
+        <div className="flex gap-2">
+                      <select className="w-auto min-w-[100px] bg-white border border-zinc-300 rounded-xl px-5 py-3 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base font-medium appearance-none cursor-pointer">
+                        <option value="+34">+34</option>
+                        <option value="+31">+31</option>
+                        <option value="+49">+49</option>
+                        <option value="+33">+33</option>
+                        <option value="+32">+32</option>
+                      </select>
                       <input
-                        name="phone_number"
                         type="tel"
-                        className="flex-1 bg-white border border-zinc-300 rounded-xl px-3 py-2 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900"
+                        className="flex-1 bg-white border border-zinc-300 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base"
                         placeholder="610 70 69 19"
                       />
                     </div>
