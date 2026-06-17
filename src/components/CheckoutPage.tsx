@@ -939,7 +939,7 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
                       <h4 className="text-sm font-bold text-primary font-serif mb-2">
                         {text.bank}
                       </h4>
-                      {totalPrice > 5000 ? (
+                       {totalPrice > 5000 ? (
                         /* Commande > 5000€ : acompte de 50% */
                         <div className="rounded-2xl border border-amber-300/60 bg-amber-50/80 p-5 text-sm text-zinc-900 space-y-3">
                           <div className="flex items-center gap-2 font-bold text-amber-700 mb-1">
@@ -954,20 +954,28 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
                           </div>
                           <p className="leading-relaxed">
                             {currentLang === "es"
-                              ? `Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp para organizar el pago de un anticipo del 50 % del importe total (${(totalPrice * 0.5).toFixed(2)} €). El saldo restante (${(totalPrice * 0.5).toFixed(2)} €) se abonará tras la entrega.`
+                              ? `Al finalizar y validar su pedido, un agente de nuestra empresa se pondrá en contacto con usted por correo electrónico o WhatsApp para organizar el pago de un anticipo del 50 % del importe total (${depositAmount.toFixed(2)} €). El saldo restante (${remainingAmount.toFixed(2)} €) se abonará tras la entrega.`
                               : currentLang === "en"
-                                ? `By finalizing and validating your order, an agent of our company will contact you by email or WhatsApp to arrange payment of a 50% deposit (${(totalPrice * 0.5).toFixed(2)} €). The remaining balance (${(totalPrice * 0.5).toFixed(2)} €) will be settled after delivery.`
-                                : `En finalisant et validant votre commande, un agent de notre entreprise vous contactera par e-mail ou par WhatsApp afin d'organiser le règlement d'un acompte de 50 % du montant total de votre commande, soit ${(totalPrice * 0.5).toFixed(2)} €. Le solde restant (${(totalPrice * 0.5).toFixed(2)} €) sera réglé après la livraison.`}
+                                ? `By finalizing and validating your order, an agent of our company will contact you by email or WhatsApp to arrange payment of a 50% deposit (${depositAmount.toFixed(2)} €). The remaining balance (${remainingAmount.toFixed(2)} €) will be settled after delivery.`
+                                : `En finalisant et validant votre commande, un agent de notre entreprise vous contactera par e-mail ou par WhatsApp afin d'organiser le règlement d'un acompte de 50 % du montant total de votre commande, soit ${depositAmount.toFixed(2)} €. Le solde restant (${remainingAmount.toFixed(2)} €) sera réglé après la livraison.`}
                           </p>
                           <div className="flex gap-4 pt-2 border-t border-amber-200 text-xs font-semibold text-amber-800">
                             <span>
-                              {currentLang === "es" ? "Anticipo (50%) :" : currentLang === "en" ? "Deposit (50%) :" : "Acompte (50%) :"}
-                              {" "}€{(totalPrice * 0.5).toFixed(2)}
+                              {currentLang === "es"
+                                ? "Anticipo (50%) :"
+                                : currentLang === "en"
+                                  ? "Deposit (50%) :"
+                                  : "Acompte (50%) :"}{" "}
+                              €{depositAmount.toFixed(2)}
                             </span>
                             <span className="opacity-50">|</span>
                             <span>
-                              {currentLang === "es" ? "Saldo tras entrega :" : currentLang === "en" ? "Balance after delivery :" : "Solde après livraison :"}
-                              {" "}€{(totalPrice * 0.5).toFixed(2)}
+                              {currentLang === "es"
+                                ? "Saldo tras entrega :"
+                                : currentLang === "en"
+                                  ? "Balance after delivery :"
+                                  : "Solde après livraison :"}{" "}
+                              €{remainingAmount.toFixed(2)}
                             </span>
                           </div>
                         </div>
