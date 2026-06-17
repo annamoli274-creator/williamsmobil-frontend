@@ -259,7 +259,8 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
   const [cardForceDisabled, setCardForceDisabled] = useState(false);
 
   // Selected Payment Method
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("virement");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] =
+    useState("virement");
 
   const localePrefix = lang ? `/${lang}` : "";
 
@@ -267,7 +268,7 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
     (sum, item) => sum + item.price * item.quantity,
     0,
   );
- const depositAmount = totalPrice * 0.5;
+  const depositAmount = totalPrice * 0.5;
   const remainingAmount = totalPrice - depositAmount;
 
   useEffect(() => {
@@ -344,44 +345,44 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
       });
 
       if (!res.ok) {
-  let errorMsg = "Failed to place order";
-  try {
-    const errorData = await res.json();
-    errorMsg = errorData.error || errorMsg;
-  } catch (_) {
-    try {
-      const textMsg = await res.text();
-      if (textMsg) errorMsg = textMsg.slice(0, 100);
-    } catch (_) {}
-  }
-  throw new Error(errorMsg);
-}
+        let errorMsg = "Failed to place order";
+        try {
+          const errorData = await res.json();
+          errorMsg = errorData.error || errorMsg;
+        } catch (_) {
+          try {
+            const textMsg = await res.text();
+            if (textMsg) errorMsg = textMsg.slice(0, 100);
+          } catch (_) {}
+        }
+        throw new Error(errorMsg);
+      }
 
-// ✅ Nettoyage panier (protégé)
-try {
-  await clearCartApi();
-} catch (err) {
-  console.error("Erreur clearCartApi", err);
-}
+      // ✅ Nettoyage panier (protégé)
+      try {
+        await clearCartApi();
+      } catch (err) {
+        console.error("Erreur clearCartApi", err);
+      }
 
-// After successful order, send proof to WhatsApp if applicable
-if (selectedPaymentMethod === "virement" && paymentProofFile) {
-  try {
-    const whatsappForm = new FormData();
-    whatsappForm.append("file", paymentProofFile);
-    whatsappForm.append("fullName", deliveryForm.fullName);
-    whatsappForm.append("email", deliveryForm.email);
-    whatsappForm.append("total", totalPrice.toString());
-    whatsappForm.append("paymentMethod", selectedPaymentMethod);
+      // After successful order, send proof to WhatsApp if applicable
+      if (selectedPaymentMethod === "virement" && paymentProofFile) {
+        try {
+          const whatsappForm = new FormData();
+          whatsappForm.append("file", paymentProofFile);
+          whatsappForm.append("fullName", deliveryForm.fullName);
+          whatsappForm.append("email", deliveryForm.email);
+          whatsappForm.append("total", totalPrice.toString());
+          whatsappForm.append("paymentMethod", selectedPaymentMethod);
 
-    await fetch("/api/whatsapp-proof", {
-      method: "POST",
-      body: whatsappForm,
-    });
-  } catch (whErr) {
-    console.error("WhatsApp proof error", whErr);
-  }
-}
+          await fetch("/api/whatsapp-proof", {
+            method: "POST",
+            body: whatsappForm,
+          });
+        } catch (whErr) {
+          console.error("WhatsApp proof error", whErr);
+        }
+      }
 
       setIsOrdered(true);
       setItems([]);
@@ -939,7 +940,7 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
                       <h4 className="text-sm font-bold text-primary font-serif mb-2">
                         {text.bank}
                       </h4>
-                   {totalPrice > 5000 ? (
+                      {totalPrice > 5000 ? (
                         /* Commande > 5000€ : acompte de 50% */
                         <div className="rounded-2xl border border-amber-300/60 bg-amber-50/80 p-5 text-sm text-zinc-900 space-y-3">
                           <div className="flex items-center gap-2 font-bold text-amber-700 mb-1">
@@ -1239,7 +1240,6 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
           </motion.div>
         )}
       </AnimatePresence>
-
     </div>
   );
 };
