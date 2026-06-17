@@ -21,17 +21,19 @@ const ContactClient = ({ dict }: ContactClientProps) => {
       const formData = new FormData(form);
       const name = (formData.get("name") ?? "").toString();
       const email = (formData.get("email") ?? "").toString();
-      const subject = (formData.get("subject") ?? "Demande depuis le site").toString();
+      const subject = (
+        formData.get("subject") ?? "Demande depuis le site"
+      ).toString();
       const message = (formData.get("message") ?? "").toString();
-      const phonePrefix = (formData.get("phone_prefix") ?? "+34").toString();
-      const phoneNumber = (formData.get("phone_number") ?? "").toString();
-      const phone = `${phonePrefix}${phoneNumber}`;
 
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BACKEND_URL || "http://localhost:5001";
+      const backendUrl =
+        process.env.NEXT_PUBLIC_BACKEND_URL ||
+        process.env.BACKEND_URL ||
+        "http://localhost:5001";
       const res = await fetch(`${backendUrl}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, subject, message }),
+        body: JSON.stringify({ name, email, subject, message }),
       });
 
       if (!res.ok) {
@@ -166,102 +168,104 @@ const ContactClient = ({ dict }: ContactClientProps) => {
             ) : (
               <>
                 <p className="text-sm text-slate-500 mb-4">
-                  Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+                  Remplissez le formulaire ci-dessous et nous vous répondrons
+                  dans les plus brefs délais.
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                      {dict.contact.full_name_label}
-                    </label>
-                    <input
-                      required
-                      name="name"
-                      type="text"
-                      className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900"
-                      placeholder={dict.contact.full_name_placeholder}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                      {dict.contact.email_field_label}
-                    </label>
-                    <input
-                      required
-                      name="email"
-                      type="email"
-                      className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900"
-                      placeholder={dict.contact.email_field_placeholder}
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                      Phone
-                    </label>
- <div className="flex gap-2 items-center">
-                      <div className="relative min-w-[120px]">
-                        <select className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-3 pr-10 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base font-medium appearance-none cursor-pointer">
-                          <option value="+34">+34</option>
-                          <option value="+31">+31</option>
-                          <option value="+49">+49</option>
-                          <option value="+33">+33</option>
-                          <option value="+32">+32</option>
-                        </select>
-                        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                      </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                        {dict.contact.full_name_label}
+                      </label>
                       <input
-                        type="tel"
-                        className="flex-1 bg-white border border-zinc-300 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base"
-                        placeholder="610 70 69 19"
+                        required
+                        name="name"
+                        type="text"
+                        className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900"
+                        placeholder={dict.contact.full_name_placeholder}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                        {dict.contact.email_field_label}
+                      </label>
+                      <input
+                        required
+                        name="email"
+                        type="email"
+                        className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900"
+                        placeholder={dict.contact.email_field_placeholder}
                       />
                     </div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                    {dict.contact.subject_label}
-                  </label>
-                  <select
-                    name="subject"
-                    className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all appearance-none text-zinc-900"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                        Phone
+                      </label>
+
+                      <div className="flex gap-2 items-center">
+                        <div className="relative min-w-[120px]">
+                          <select className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-3 pr-4 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base font-medium cursor-pointer">
+                            <option value="+34">+34</option>
+                            <option value="+31">+31</option>
+                            <option value="+49">+49</option>
+                            <option value="+33">+33</option>
+                            <option value="+32">+32</option>
+                          </select>
+                        </div>
+                        <input
+                          type="tel"
+                          className="flex-1 bg-white border border-zinc-300 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none transition-all text-zinc-900 text-base"
+                          placeholder="610 70 69 19"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                      {dict.contact.subject_label}
+                    </label>
+                    <select
+                      name="subject"
+                      className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all appearance-none text-zinc-900"
+                    >
+                      <option>{dict.contact.subject_option1}</option>
+                      <option>{dict.contact.subject_option2}</option>
+                      <option>{dict.contact.subject_option3}</option>
+                      <option>{dict.contact.subject_option4}</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
+                      {dict.contact.message_label}
+                    </label>
+                    <textarea
+                      required
+                      name="message"
+                      rows={5}
+                      className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-zinc-900"
+                      placeholder={dict.contact.message_placeholder}
+                    ></textarea>
+                  </div>
+                  <button
+                    disabled={status === "sending"}
+                    className="w-full premium-gradient text-white py-5 rounded-2xl font-bold text-xl hover:scale-[1.02] transition-all shadow-xl flex items-center justify-center gap-3 disabled:opacity-50"
                   >
-                    <option>{dict.contact.subject_option1}</option>
-                    <option>{dict.contact.subject_option2}</option>
-                    <option>{dict.contact.subject_option3}</option>
-                    <option>{dict.contact.subject_option4}</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">
-                    {dict.contact.message_label}
-                  </label>
-                  <textarea
-                    required
-                    name="message"
-                    rows={5}
-                    className="w-full bg-white border border-zinc-300 rounded-xl px-5 py-4 focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-zinc-900"
-                    placeholder={dict.contact.message_placeholder}
-                  ></textarea>
-                </div>
-                <button
-                  disabled={status === "sending"}
-                  className="w-full premium-gradient text-white py-5 rounded-2xl font-bold text-xl hover:scale-[1.02] transition-all shadow-xl flex items-center justify-center gap-3 disabled:opacity-50"
-                >
-                  {status === "sending" ? (
-                    <>
-                      <Loader2 className="w-6 h-6 animate-spin" />{" "}
-                      {dict.contact.submit_button}...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-6 h-6" /> {dict.contact.submit_button}
-                    </>
-                  )}
-                </button>
+                    {status === "sending" ? (
+                      <>
+                        <Loader2 className="w-6 h-6 animate-spin" />{" "}
+                        {dict.contact.submit_button}...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-6 h-6" />{" "}
+                        {dict.contact.submit_button}
+                      </>
+                    )}
+                  </button>
                 </form>
-                </> 
+              </>
             )}
           </div>
         </div>
