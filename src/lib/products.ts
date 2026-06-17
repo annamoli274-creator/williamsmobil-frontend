@@ -1354,7 +1354,7 @@ export const products: Product[] = [
     title: "Remorque plateau ridelles aluminium - Modèle Swift J",
     price: "1750 €",
     image:
-      "/images/remorque/imgj/WhatsApp Image 2026-05-16 at 06.48.30 (2).jpeg",
+      "/images/remorque/imgj/WhatsApp Image 2026-05-16 at 06.48.42 (1).jpeg",
     gallery: [
       "/images/remorque/imgj/WhatsApp Image 2026-05-16 at 06.48.30 (2).jpeg",
       "/images/remorque/imgj/WhatsApp Image 2026-05-16 at 06.48.42 (1).jpeg",
@@ -1414,7 +1414,7 @@ export const products: Product[] = [
     title: "Remorque plateau basculant léger pour quads - Modèle Quad L",
     price: "1450 €",
     image:
-      "/images/remorque/imgl/WhatsApp Image 2026-05-16 at 06.47.58 (2).jpeg",
+     "/images/remorque/imgl/WhatsApp Image 2026-05-16 at 06.48.12 (1).jpeg",
     gallery: [
       "/images/remorque/imgl/WhatsApp Image 2026-05-16 at 06.47.58 (2).jpeg",
       "/images/remorque/imgl/WhatsApp Image 2026-05-16 at 06.48.12 (1).jpeg",
