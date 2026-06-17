@@ -23,7 +23,6 @@ import {
   removeCartItem,
   logClientAction,
 } from "@/lib/cart";
-import { ChevronDown } from "lucide-react";
 type CartItem = {
   id: string;
   name: string;
