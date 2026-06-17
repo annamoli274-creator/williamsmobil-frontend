@@ -1123,7 +1123,7 @@ export const products: Product[] = [
     title: "Remorque plateau porte-voiture surbaissé - Modèle Apex B",
     price: "530 €",
     image:
-      "/images/remorque/imgb/WhatsApp Image 2026-05-16 at 06.46.23 (3).jpeg",
+       "/images/remorque/imgb/WhatsApp Image 2026-05-16 at 06.46.23 (1).jpeg",
     gallery: [
       "/images/remorque/imgb/WhatsApp Image 2026-05-16 at 06.46.23 (1).jpeg",
       "/images/remorque/imgb/WhatsApp Image 2026-05-16 at 06.46.23 (2).jpeg",
