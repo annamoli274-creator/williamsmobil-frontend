@@ -267,6 +267,8 @@ const CheckoutPage = ({ lang }: CheckoutPageProps) => {
     (sum, item) => sum + item.price * item.quantity,
     0,
   );
+ const depositAmount = totalPrice * 0.5;
+  const remainingAmount = totalPrice - depositAmount;
 
   useEffect(() => {
     setSelectedPaymentMethod("virement");
