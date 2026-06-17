@@ -939,7 +939,7 @@ if (selectedPaymentMethod === "virement" && paymentProofFile) {
                       <h4 className="text-sm font-bold text-primary font-serif mb-2">
                         {text.bank}
                       </h4>
-                       {totalPrice > 5000 ? (
+                   {totalPrice > 5000 ? (
                         /* Commande > 5000€ : acompte de 50% */
                         <div className="rounded-2xl border border-amber-300/60 bg-amber-50/80 p-5 text-sm text-zinc-900 space-y-3">
                           <div className="flex items-center gap-2 font-bold text-amber-700 mb-1">
