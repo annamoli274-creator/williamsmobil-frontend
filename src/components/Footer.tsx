@@ -162,10 +162,10 @@ const Footer = ({ lang, dict }: FooterProps) => {
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-black" />{" "}
               <a
-                href="tel:+34610706919"
+                href="tel:+48453981043"
                 className="hover:text-black transition-colors"
               >
-                +34 610 70 69 19
+                +48 453 981 043
               </a>
             </li>
             <li className="flex items-center gap-3 leading-relaxed">
@@ -185,6 +185,7 @@ const Footer = ({ lang, dict }: FooterProps) => {
           <span>ES</span>
           <span>BE</span>
           <span>NL</span>
+          <span>PL</span>
         </div>
       </div>
     </footer>
