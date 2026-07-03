@@ -15,7 +15,7 @@ export default async function MentionsPage(props: {
     {
       title: content?.editor_title || "Éditeur du site",
       description: content?.editor_text ||
-        "Williams MobilHome International\nSiège social : Avenida de America,  28002 Madrid, espanã : +34 610 70 69 19",
+        "Williams MobilHome International\nSiège social : Avenida de America,  28002 Madrid, espanã : +48 453 981 043",
     },
     {
       title: content?.director_title || "Directeur de publication",
